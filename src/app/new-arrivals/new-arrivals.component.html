@@ -1,0 +1,64 @@
+<section class="container mt-5">
+    <div class="row">
+         <div class="col-lg-3 ">
+              <div class=" border">
+                       <div class=" saleoff_offer border-bottom   ">
+                             <p>Special items </p>
+                    
+        
+                         <div class="d-flex">
+                             <mat-icon>keyboard_arrow_left</mat-icon>
+                             <mat-icon>keyboard_arrow_right</mat-icon>
+                         </div>
+                       </div>
+                       <!-- <owl-carousel-o [options]="carouselOptions">
+                        <ng-container>
+                            <ng-template> -->
+
+                                <div class="sale-off   m-4" *ngFor="let sale of saleOff">
+                                         <div>
+                                          <img [src]="sale.image"/>
+                                         </div>
+                                      <div>
+                                          <h4>{{sale.name}}</h4>
+                                          <p>{{sale.price}}</p>
+                                      </div>
+                                    
+                                </div>
+                            <!-- </ng-template>
+
+                        </ng-container>
+                       </owl-carousel-o> -->
+              </div>
+              <!-- <div class="side_garden">
+                   <img src="../../assets/saleoff/sideimage.jpg" />
+              </div> -->
+         </div>
+         <div class="col-lg-9 " >
+              <div class=" row ">
+                   <div class="border-bottom popular_product">
+                        <p>New Arrivals</p>
+                     </div>
+                     <owl-carousel-o [options]="carouselOptions">
+                        <ng-container *ngFor="let item of image">
+                            <ng-template carouselSlide>
+                <!-- <div class="col-md-4 mb-3" *ngFor="let item of image" > -->
+                   <div class="popularproduct " [routerLink]="'/product-list'" >
+                        <div class="sale-image">
+                             <img [src]="item.image" >
+                        </div>
+                        <div class="nameofimage">
+                            <h3>{{ item.name}}</h3>
+                        </div>
+                   </div>
+                 
+                <!-- </div> -->
+
+            </ng-template>
+
+        </ng-container>
+       </owl-carousel-o>
+              </div>
+            </div>
+    </div>
+</section>

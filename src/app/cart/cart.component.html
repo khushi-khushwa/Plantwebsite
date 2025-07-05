@@ -1,0 +1,139 @@
+
+<!-- <div class="container">
+     <div class="row">
+        <div class="col-lg-4 d-flex align-items-center justify-content-center" *ngFor="let item of cartitem" >
+            <div >
+
+         
+            <div class="d-flex justify-content-center ">
+                <img [src]="item.image" class="image-size mt-4">
+            </div>
+            <h6 class="mb-0 mt-3">{{item.name}}</h6>
+            <p class="description"><small>{{item.detail  }}...</small></p>
+         
+                <img [src]="item.like" class="heart-img">
+         
+            
+            <div class="d-flex align-items-center gap-5">
+                <span>
+                    
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+            
+            </span>
+            </div>
+            <button (click)="removecart(item.id)">Remove</button>
+        </div>
+     </div>
+</div> -->
+
+
+
+<!-- Enhanced Shopping Cart Section -->
+<div class="container cart-section">
+    <div class="section-title">
+      <h2>Shopping Cart</h2>
+      <p>Review and modify your selected items</p>
+    </div>
+    
+    <!-- Empty cart state (show when there are no items) -->
+    <div class="empty-cart" *ngIf="cartitem && cartitem.length === 0">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added any plants to your cart yet</p>
+      <a href="/shop" class="btn-shop">Continue Shopping</a>
+    </div>
+    
+    <!-- Cart with items -->
+    <div class="row" *ngIf="cartitem && cartitem.length > 0">
+      <!-- Cart items -->
+      <div class="col-lg-8">
+        <div class="cart-item" *ngFor="let item of cartitem">
+          <img [src]="item.like" class="heart-img">
+          
+          <div class="item-content">
+            <div class="image-container">
+              <img [src]="item.image" class="image-size">
+            </div>
+            
+            <div class="item-details">
+              <h6>{{item.name}}</h6>
+              <p class="description"><small>{{item.detail}}</small></p>
+              
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              
+              <div class="price-container">
+                <span class="price">Rs.{{item.price}}</span>
+                <span class="original-price" *ngIf="item.originalPrice">Rs.{{item.originalPrice}}</span>
+              </div>
+              
+              <!-- <div class="quantity-controls">
+                <button class="qty-btn" (click)="decreaseQuantity(item)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" class="qty-input" [value]="item.quantity || 1" readonly>
+                <button class="qty-btn" (click)="increaseQuantity(item)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div> -->
+              
+              <div class="item-actions">
+                <button class="btn-remove" (click)="removecart(item.id)">
+                  <i class="fa-solid fa-trash-can"></i> Remove
+                </button>
+                <button class="btn-wishlist">
+                  <i class="fa-solid fa-heart"></i> Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Order summary -->
+      <div class="col-lg-4">
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+<!--           
+          <div class="summary-item">
+            <span>Subtotal ({{cartitem.length}} items)</span>
+            <span>Rs.{{calculateSubtotal()}}</span>
+          </div>
+          
+          <div class="summary-item">
+            <span>Shipping</span>
+            <span>Rs.{{shippingCost || 100}}</span>
+          </div>
+          
+          <div class="summary-item">
+            <span>Tax</span>
+            <span>Rs.{{calculateTax()}}</span>
+          </div>
+          
+          <div class="summary-item total">
+            <span>Total</span>
+            <span>Rs.{{calculateTotal()}}</span>
+          </div>
+           -->
+          <button class="btn-checkout">Proceed to Checkout</button>
+          
+          <div class="promo-code">
+            <p>Have a promo code?</p>
+            <div class="promo-input">
+              <input type="text" placeholder="Enter code">
+              <button>Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+
+.wishlist{
+    position: relative;
+
+    .wishlist-align{
+       position: relative;
+    }
+
+    .image-size{
+        height:5rem;
+        width:5rem;
+    }
+    .buy-btn{
+        width:7rem;
+    }
+    .heart-img{
+        height:3rem;
+        width:3rem;
+        position:absolute;
+        top:1rem;
+        right:1rem;
+    }
+}

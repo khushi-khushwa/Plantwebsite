@@ -1,0 +1,162 @@
+{
+  "cart": [
+    {
+      "id": "compost-3",
+      "catergory": "compost",
+      "name": "Cocopeat powder",
+      "price": "169",
+      "image": "assets/images/compost/coco-powder.jpg",
+      "fakeprice": "199",
+      "reviews": "",
+      "off": "",
+      "sale": "",
+      "dislike": "assets/images/dislike.jpg",
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "like": "assets/images/red-icon.jpg",
+      "description": "To use cocopeat powder, rehydrate it with water, mix 1 part cocopeat powder with 2-3 parts soil or potting mix for better soil structure and water retention."
+    },
+    {
+      "id": "indoor-2",
+      "catergory": "indoor",
+      "name": "Elephant bush",
+      "image": "assets/images/indoor/3.png",
+      "price": "169",
+      "fakeprice": "100",
+      "like": "assets/images/red-icon.jpg",
+      "dislike": "assets/images/dislike.jpg",
+      "reviews": "",
+      "off": "",
+      "details": {
+        "description": [
+          "Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.",
+          "Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost."
+        ],
+        "instruction": [
+          "Keep this product away from the reach of children below 3 years"
+        ],
+        "benefits": [
+          "Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity"
+        ],
+        "use": [
+          "To fill pots/containers, vertical gardens, bio walls for growing Plants",
+          "To prepare raised beds for growing Plants",
+          "To repot plants",
+          "To amend existing soil in pots"
+        ],
+        "notes": [
+          "This soil does not contain any specialized fertilizer like flowering or fruiting booste",
+          "Store this soil in cool & dry place."
+        ]
+      },
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "description": "Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash",
+      "sale": ""
+    },
+    {
+      "id": "indoor-2",
+      "catergory": "indoor",
+      "name": "Elephant bush",
+      "image": "assets/images/indoor/3.png",
+      "price": "169",
+      "fakeprice": "100",
+      "like": "assets/images/red-icon.jpg",
+      "dislike": "assets/images/dislike.jpg",
+      "reviews": "",
+      "off": "",
+      "details": {
+        "description": [
+          "Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.",
+          "Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost."
+        ],
+        "instruction": [
+          "Keep this product away from the reach of children below 3 years"
+        ],
+        "benefits": [
+          "Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity"
+        ],
+        "use": [
+          "To fill pots/containers, vertical gardens, bio walls for growing Plants",
+          "To prepare raised beds for growing Plants",
+          "To repot plants",
+          "To amend existing soil in pots"
+        ],
+        "notes": [
+          "This soil does not contain any specialized fertilizer like flowering or fruiting booste",
+          "Store this soil in cool & dry place."
+        ]
+      },
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "description": "Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash",
+      "sale": ""
+    },
+    {
+      "id": "seed-2",
+      "catergory": "seeds",
+      "name": "carrot",
+      "price": "169",
+      "image": "assets/images/seeds/balsam.jpg",
+      "fakeprice": "199",
+      "like": "assets/images/red-icon.jpg",
+      "reviews": "",
+      "off": "",
+      "details": {
+        "description": [
+          "Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.",
+          "Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost."
+        ],
+        "instruction": [
+          "Keep this product away from the reach of children below 3 years"
+        ],
+        "benefits": [
+          "Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity"
+        ],
+        "use": [
+          "To fill pots/containers, vertical gardens, bio walls for growing Plants",
+          "To prepare raised beds for growing Plants",
+          "To repot plants",
+          "To amend existing soil in pots"
+        ],
+        "notes": [
+          "This soil does not contain any specialized fertilizer like flowering or fruiting booste",
+          "Store this soil in cool & dry place."
+        ]
+      },
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "dislike": "assets/images/dislike.jpg",
+      "description": "Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash",
+      "sale": ""
+    },
+    {
+      "id": "indoor-1",
+      "name": "Peace Lily, Spathiphyllum-plant",
+      "price": "169",
+      "catergory": "indoor",
+      "image": "assets/images/indoor/5.png",
+      "detail": {
+        "description": [
+          "Peace Lily Plant is a very popular and very rare indoor flowering houseplant. It is also an excellent air purifier plant."
+        ],
+        "item": [
+          "WHY THIS PLANT? Peace Lily (Small size) (Botanical name: Peperomia obtusifolia) is an indoor plant believed to bring good luck and purifies air. It has heartSpathiphyllum Green) purifies indoor air, enhances levels of humidity. It has lovely white flowers with contrasting green leaves that add beauty to home decor and office decor.",
+          "HOW ARE PLANTS SHIPPED? Plants are shipped in sturdy packaging to ensure safety of the plant and prevent spillage of manure and coco peat. The shipping box has an air hole for ventilation and plants are adequately watered to stay alive and green for up to 7 days.",
+          "HOW TO TAKE CARE OF PLANTS? Water watered once a week in summer and once every 2 weeks in winter. Keep in moderate to bright indirect sunlight. Avoid temperature shock by shifting plants between indoors and outdoors for better growth.Perfect low maintenance plant that can purify air in your home,office.",
+          ""
+        ],
+        "care": [
+          "Sunlight: Natural indirect / artificial bright light is ideal for peace lily plant growth.",
+          "soil: The soil should be well drained and fertile, rich in organic content.",
+          "Watering: Poke your finger/plain small stick into the soil to check the moisture.",
+          "Fertilizer: Before application of fertilizer loosen the topsoil without disturbing the roots of the plant so it can uptake the nutrients and moisture."
+        ]
+      }
+    }
+  ]
+}

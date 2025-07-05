@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row form-container ">
+        <!-- Form -->
+        <div class="col-lg-5 clear-start">
+            <div class="formrow ">
+                <div class="form-box">
+                    <div class="logo-img">
+                        <img src="../../assets/shyam-01.png" alt="Logo">
+                    </div>
+                    <form [formGroup]="loginForm">
+                        <div>
+                            <h2>Welcome </h2>
+                            <p>welcome in the world of  plants, connect with the nature</p>
+                        </div>
+                        <div class="d-flex flex-column my-3">
+                            <mat-form-field>
+
+                                <input matInput type="email" placeholder="Enter email" formControlName="email" />
+                                <!-- <mat-hint align="start">Use a valid email format</mat-hint> -->
+                                <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                                    Email is required.
+                                  </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex flex-column my-3">
+                            <mat-form-field >
+                                <input  matInput type="password" placeholder="Enter password"  formControlName="password"  />
+
+                                <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                                    Enter valid   password.
+                                  </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex gap-4 justify-content-center">
+                            <button type="submit" class="button p-2 text-white" [disabled]="!loginForm.valid" (click)="submit()">Login</button>
+                            <button type="submit"  class="button p-2   text-white"  (click)="signup()">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="col-lg-5  p-0 m-0 d-flex justify-content-center align-items-center right-image">
+           
+            <img src="../../assets/2777638-02.png" class="img-fluid" alt="Illustration" style="width: 100%;     height: 42.4rem;">
+
+                <img src="../../assets/sfef-01.png" alt="Logo" class="logo">
+    
+        </div>
+    </div>
+</div>

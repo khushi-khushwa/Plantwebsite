@@ -1,0 +1,358 @@
+/* Main container styles */
+.checkout-container {
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-lg-4, .col-lg-8 {
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-lg-4 {
+  width: 33.33%;
+}
+
+.col-lg-8 {
+  width: 66.67%;
+}
+
+/* Order Summary Card Styles */
+.order-summary {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Product details */
+.product-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.product-image {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Quantity controls */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.quantity-control span {
+  margin-right: 1rem;
+  color: #666;
+}
+
+.btn-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-circle:hover {
+  background-color: #357a38;
+}
+
+.quantity-value {
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+/* Price details */
+.price-details {
+  margin-top: 2rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: #666;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 1rem 0;
+}
+
+.price-row.total {
+  font-weight: 700;
+  color: #4caf50;
+  font-size: 1.2rem;
+}
+
+/* Checkout form styles */
+.checkout-form-container {
+  height: 100%;
+}
+
+.checkout-stepper {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  background-color: #f5f5f5;
+  padding: 0 1rem;
+}
+
+::ng-deep .mat-step-header {
+  padding: 1rem 0.5rem;
+}
+
+::ng-deep .mat-step-label {
+  font-weight: 500;
+}
+
+::ng-deep .mat-step-icon {
+  background-color: #4caf50 !important;
+}
+
+/* Step content */
+.step-content {
+  padding: 2rem;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-fields {
+  flex: 1;
+}
+
+.field-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Input styling */
+.input-field {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #e0e0e0;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #4caf50;
+}
+
+/* Radio button styling */
+.radio-field {
+  margin: 1rem 0;
+}
+
+.payment-option {
+  margin-bottom: 1rem;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+}
+
+.radio-container:hover input ~ .checkmark {
+  background-color: #f0f0f0;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: #fff;
+  border: 2px solid #4caf50;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-container .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4caf50;
+}
+
+/* Payment details */
+.payment-method-details {
+  margin-left: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.payment-method-details.active {
+  display: block;
+}
+
+.bank-option {
+  margin-bottom: 0.5rem;
+}
+
+.card-field {
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary, .btn-success {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #357a38;
+}
+
+.btn-secondary {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.btn-secondary:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-success {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #1b5e20;
+}
+
+.btn-primary i, .btn-secondary i, .btn-success i {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .col-lg-4, .col-lg-8 {
+    width: 100%;
+  }
+  
+  .order-summary {
+    margin-bottom: 2rem;
+  }
+}

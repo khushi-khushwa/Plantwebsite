@@ -1,0 +1,127 @@
+{
+  "order": [
+    {
+      "id": "compost-2",
+      "catergory": "compost",
+      "name": "Bone Meal",
+      "price": "Rs. 169",
+      "image": "assets/images/compost/bone-meal.jpg",
+      "fakeprice": "199",
+      "reviews": "",
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "dislike": "assets/images/dislike.jpg",
+      "like": "assets/images/red-icon.jpg",
+      "description": "Bone Meal Powder for Plants (1 KG) - Organic Fertilizer, Rich in Phosphorus and Calcium, Natural Plant Growth Fertilizer for Home Gardening.",
+      "details": {
+        "description": [
+          "Bone meal is a organic source of nutrients for gardening. This rich source of phosphorous and calcium is best for fruit and flower development on your plant.",
+          "Bone meal as name suggest is made from ground up animal bones. Bone meal is generally used by gardenenrs to increase phosphorous content in the soil. This ia also the good source of calcium.Bone meal also aids in balancing phosphorous content in nitrogen rich organic manure."
+        ],
+        "instruction": [
+          "Use gloves / mask if you are allergic to fertilizers"
+        ],
+        "benefits": [
+          "This pack is sufficient for 1 plant potted in a pot having 5-6 inch diameter for approx 2 years",
+          "Eco friendly No chemicalsEasy applicationBetter fruit and flower quality"
+        ],
+        "use": [
+          "You can use bone meal along with any nitrogen rich organic manure",
+          "You can add it in soil mix before planting new plants in pots also",
+          "You can use it in existing plants in pot directly"
+        ]
+      },
+      "off": "",
+      "sale": "",
+      "user": {
+        "contactDetail": {
+          "name": "khushi",
+          "email": "khushikhush@gmail.com",
+          "password": "1243254255"
+        },
+        "deliveryDetail": {
+          "country": "inida",
+          "address": "sec-54",
+          "city": "ggn",
+          "zipcode": "122002"
+        },
+        "paymentDetail": {
+          "UPI": "",
+          "wallets": "",
+          "Credit/Debit": "",
+          "netbanking": "",
+          "Cash on Delivery": ""
+        }
+      },
+      "totalpay": 557
+    },
+    {
+      "id": "seed-2",
+      "catergory": "seeds",
+      "name": "carrot",
+      "price": "169",
+      "image": "assets/images/seeds/balsam.jpg",
+      "fakeprice": "199",
+      "like": "assets/images/red-icon.jpg",
+      "reviews": "",
+      "off": "",
+      "sale": "",
+      "user": {
+        "contactDetail": {
+          "name": "arsh",
+          "email": "arsh@gmail.com",
+          "password": "1234567"
+        },
+        "deliveryDetail": {
+          "country": "india",
+          "address": "badhshapur",
+          "city": "ggn",
+          "zipcode": "24342"
+        },
+        "paymentDetail": {
+          "UPI": "",
+          "wallets": "",
+          "Credit/Debit": "",
+          "netbanking": "",
+          "Cash on Delivery": ""
+        }
+      },
+      "totalpay": 388
+    },
+    {
+      "id": "indoor-2",
+      "catergory": "indoor",
+      "name": "Elephant bush",
+      "image": "assets/images/indoor/3.png",
+      "price": "169",
+      "fakeprice": "100",
+      "like": "assets/images/red-icon.jpg",
+      "dislike": "assets/images/dislike.jpg",
+      "reviews": "",
+      "off": "",
+      "sale": "",
+      "user": {
+        "contactDetail": {
+          "name": "xfghjk",
+          "email": "adsfgfhgjkj",
+          "password": "23456789"
+        },
+        "deliveryDetail": {
+          "country": "xfg",
+          "address": "fxx",
+          "city": "gc",
+          "zipcode": "32446"
+        },
+        "paymentDetail": {
+          "UPI": "",
+          "wallets": "",
+          "Credit/Debit": "",
+          "netbanking": "",
+          "Cash on Delivery": ""
+        }
+      },
+      "totalpay": 557
+    }
+  ]
+}

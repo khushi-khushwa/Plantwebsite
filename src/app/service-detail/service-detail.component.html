@@ -1,0 +1,21 @@
+<div class="container-fluid service-detail">
+    <section class="container show-data">
+        <div class="applyrow col-lg-12">
+            <div *ngIf="serviceDetail" class="">
+                <div class="p-5 service-box">
+                    <div>
+                        <span class="d-flex gap-4 align-items-center">
+                            <img [src]="serviceDetail.image" class="image-size">
+                            <h4>{{serviceDetail.title}}</h4>
+                        </span>
+                        <p class="first-p">Description: {{serviceDetail.description}}</p>
+                        <p>Charges: {{serviceDetail.charges}}</p>
+                        <button class="btn btn-success" (click)="apply()">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

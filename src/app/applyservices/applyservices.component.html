@@ -1,0 +1,37 @@
+
+
+
+
+
+<!-- service-list.component.html -->
+<div class="container-fluid service-container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="section-title"> Services</h3>
+        <p class="section-description">Service that you have applied</p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-12">
+        <!-- Card-based service list -->
+        <div class="service-card" *ngFor="let data of order; let i = index">
+          <div class="service-info">
+            <div class="service-number">{{i + 1}}</div>
+            <div class="service-details">
+                <div class="service-head">
+
+                    <h5 class="service-title">{{data.title}}</h5>
+                    <span class="price-tag">{{data.charges}}</span>
+                </div>
+              <p class="service-description" *ngIf="data.description">{{data.description}}</p>
+            </div>
+          </div>
+          <!-- <div class="service-price">
+            <span class="price-tag">{{data.charges}}</span>
+           
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>

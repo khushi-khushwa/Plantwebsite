@@ -1,0 +1,205 @@
+/*  Wishlist Section Styling */
+
+.wishlist {
+    padding: 3rem 0;
+    max-width: 100rem;
+    margin: 0 auto;
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      
+      h2 {
+        color: #2e7d32;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+    
+    .wishlist-align {
+      background-color: white;
+      border-radius: 10px;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      margin-bottom: 1.5rem;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+      }
+    }
+    
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background-color: #f0f0f0;
+      }
+    }
+    
+    .image-size {
+      height: auto;
+      max-height: 120px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    
+    .product-info {
+      padding: 0 1rem;
+      text-align: center;
+      
+      h6 {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+      }
+      
+      .description {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    .rating {
+      margin: 0.5rem 0 1rem;
+      color: #ffb300;
+      font-size: 0.9rem;
+    }
+    
+    .heart-img {
+      height: 2rem;
+      width: 2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      transition: transform 0.2s;
+      cursor: pointer;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem 1rem;
+      
+      .buy-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s;
+        min-width: 6rem;
+        
+        &.btn-remove {
+          background-color: #f44336;
+          border-color: #f44336;
+          
+          &:hover {
+            background-color: #d32f2f;
+            border-color: #d32f2f;
+          }
+        }
+        
+        &.btn-buy {
+          background-color: #2e7d32;
+          border-color: #2e7d32;
+          
+          &:hover {
+            background-color: #1b5e20;
+            border-color: #1b5e20;
+          }
+        }
+      }
+    }
+    
+    .empty-wishlist {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      
+      i {
+        font-size: 4rem;
+        color: #ccc;
+        margin-bottom: 1.5rem;
+      }
+      
+      h3 {
+        color: #555;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        color: #777;
+        margin-bottom: 2rem;
+      }
+      
+      .btn-shop {
+        background-color: #2e7d32;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        display: inline-block;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        
+        &:hover {
+          background-color: #1b5e20;
+        }
+      }
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .wishlist .col-lg-3 {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .wishlist .col-lg-3 {
+      width: 100%;
+    }
+    
+    .wishlist .action-buttons {
+      flex-direction: column;
+      gap: 0.5rem;
+      
+      .buy-btn {
+        width: 100%;
+      }
+    }
+  }

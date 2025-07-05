@@ -1,0 +1,257 @@
+<!--  Homepage Component -->
+<div class="plant-shop-homepage">
+     <!-- Hero Banner Section -->
+     <div class="hero-banner">
+       <div class="hero-content">
+         <h1 class="hero-title">CACTUS</h1>
+         <h1 class="hero-title bold">DECORATION</h1>
+         <p class="hero-subtitle">Discount 20% off on indoor plants</p>
+         <button class="primary-button">DISCOVER NOW</button>
+       </div>
+     </div>
+   
+     <!-- Categories Section -->
+     <section class="categories-section">
+       <h2 class="section-title">Categories</h2>
+       <div class="categories-container">
+         <div class="category-card" *ngFor="let category of categories">
+           <div class="category-image-container">
+             <img [src]="category.image" alt="{{category.name}}" class="category-image">
+           </div>
+           <span class="category-name">{{category.name}}</span>
+         </div>
+       </div>
+     </section>
+   
+
+   
+     <!-- Products Showcase Section -->
+     <section class="products-showcase">
+       <div class="showcase-layout">
+         <!-- Sale Off Sidebar -->
+         <div class="sidebar">
+           <div class="sidebar-header">
+             <h3>Sale Off</h3>
+             <div class="nav-arrows">
+               <button class="arrow-button"><i class="fa-solid fa-chevron-left"></i></button>
+               <button class="arrow-button"><i class="fa-solid fa-chevron-right"></i></button>
+             </div>
+           </div>
+           
+           <div class="sale-products">
+             <div class="sale-product-card" *ngFor="let product of saleOff">
+               <img [src]="product.image" alt="{{product.name}}" class="sale-product-image">
+               <div class="sale-product-info">
+                 <h4>{{product.name}}</h4>
+                 <p class="price">{{product.price}}</p>
+               </div>
+             </div>
+           </div>
+           
+           <div class="promo-banner">
+             <img src="../../assets/saleoff/sideimage.jpg" alt="Promo" class="promo-image">
+           </div>
+         </div>
+         
+         <!-- Popular Products -->
+         <div class="main-content">
+           <div class="section-header">
+             <h3>Popular Products</h3>
+           </div>
+           
+           <div class="product-grid">
+             <div class="product-card" *ngFor="let product of image" [routerLink]="'/product-list'">
+               <div class="product-image-container">
+                 <img [src]="product.image" alt="{{product.name}}" class="product-image">
+                 <div class="product-actions">
+                   <button class="action-button"><i class="fa-solid fa-heart"></i></button>
+                   <button class="action-button"><i class="fa-solid fa-cart-shopping"></i></button>
+                 </div>
+               </div>
+               <div class="product-info">
+                 <h4 class="product-name">{{product.name}}</h4>
+                 <p class="product-price">{{product.price}}</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+   
+     <!-- Product Carousels Section -->
+     <section class="product-carousels">
+       <h2 class="section-title">Shop By Category</h2>
+       
+       <!-- Outdoor Products -->
+       <div class="category-carousel">
+         <div class="category-header">
+           <h3>OUTDOOR</h3>
+           <div class="view-all">
+             <a routerLink="/outdoor">View All <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+         </div>
+         
+         <owl-carousel-o [options]="carouselOptions">
+           <ng-container *ngFor="let product of outdoor">
+             <ng-template carouselSlide>
+               <div class="carousel-product-card" routerLink="/outdoor">
+                 <div class="carousel-product-image">
+                   <img [src]="product.image" alt="{{product.name}}">
+                 </div>
+                 <div class="carousel-product-info">
+                   <h4>{{product.name}}</h4>
+                   <!-- <p class="product-description">{{product.description | slice: 0:32}}</p> -->
+                   <p class="product-price">{{product.price}}</p>
+                 </div>
+               </div>
+             </ng-template>
+           </ng-container>
+         </owl-carousel-o>
+       </div>
+       
+       <!-- Indoor Products -->
+       <div class="category-carousel">
+         <div class="category-header">
+           <h3>INDOOR</h3>
+           <div class="view-all">
+             <a routerLink="/indoor">View All <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+         </div>
+         
+         <owl-carousel-o [options]="carouselOptions">
+           <ng-container *ngFor="let product of indoor">
+             <ng-template carouselSlide>
+               <div class="carousel-product-card" routerLink="/indoor">
+                 <div class="carousel-product-image">
+                   <img [src]="product.image" alt="{{product.name}}">
+                 </div>
+                 <div class="carousel-product-info">
+                   <h4>{{product.name}}</h4>
+                   <!-- <p class="product-description">{{product.description | slice: 0:32}}</p> -->
+                   <p class="product-price">{{product.price}}</p>
+                 </div>
+               </div>
+             </ng-template>
+           </ng-container>
+         </owl-carousel-o>
+       </div>
+       
+       <!-- Tools Products -->
+       <div class="category-carousel">
+         <div class="category-header">
+           <h3>TOOLS</h3>
+           <div class="view-all">
+             <a routerLink="/tools">View All <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+         </div>
+         
+         <owl-carousel-o [options]="carouselOptions">
+           <ng-container *ngFor="let product of tools">
+             <ng-template carouselSlide>
+               <div class="carousel-product-card" routerLink="/tools">
+                 <div class="carousel-product-image">
+                   <img [src]="product.image" alt="{{product.name}}">
+                 </div>
+                 <div class="carousel-product-info">
+                   <h4>{{product.name}}</h4>
+                   <!-- <p class="product-description">{{product.description | slice: 0:32}}</p> -->
+                   <p class="product-price">{{product.price}}</p>
+                 </div>
+               </div>
+             </ng-template>
+           </ng-container>
+         </owl-carousel-o>
+       </div>
+     </section>
+   
+     <!-- Promotional Banners -->
+     <section class="promo-section">
+       <div class="promo-layout">
+         <div class="main-promo">
+           <owl-carousel-o [options]="customOption">
+             <ng-template carouselSlide>
+               <div class="promo-slide">
+                 <img src="./../assets/banner-2.jpg" alt="Green Deals">
+                 <div class="promo-content">
+                   <h2><span class="highlight">Green Deals🍀</span> <br> Fresh Feels!</h2>
+                   <p>Up to 30% off on best-selling plants. Limited time offer, shop now!</p>
+                   <button class="promo-button">Grab the Offer</button>
+                 </div>
+               </div>
+             </ng-template>
+             <ng-template carouselSlide>
+               <div class="promo-slide">
+                 <img src="./../assets/banner-1.jpg" alt="Bring Nature Home">
+                 <div class="promo-content">
+                   <h2>Bring Nature Home</h2>
+                   <p>Transform your space with lush, air-purifying plants.<br> Explore our exclusive collection now!</p>
+                   <button class="promo-button">Shop Now</button>
+                 </div>
+               </div>
+             </ng-template>
+           </owl-carousel-o>
+         </div>
+         
+         <div class="side-promo">
+           <img src="./../assets/images/allimage/32.jpg" alt="Green Buddy">
+           <div class="side-promo-content">
+             <button class="promo-button">Find Your Green Buddy</button>
+           </div>
+         </div>
+       </div>
+     </section>
+   
+     <!-- Garden Care & Decor Section -->
+     <section class="garden-care">
+       <h2 class="section-title">Garden Decor and Care</h2>
+       
+       <div class="care-layout">
+         <div class="care-main">
+           <img src="../../assets/slider/banner1.jpg" alt="Dream Garden">
+           <div class="care-content">
+             <h3>Design Your Dream Garden!</h3>
+             <p>Whether you're a pro or a beginner, find everything you need to craft a stunning outdoor space.</p>
+             <ul class="benefits-list">
+               <li>✅ Easy-to-use gardening kits</li>
+               <li>✅ Expert landscaping tools</li>
+               <li>✅ Handpicked plants for every season</li>
+               <li>✅ Creative DIY garden ideas</li>
+             </ul>
+             <button class="care-button">Start Gardening</button>
+           </div>
+         </div>
+         
+         <div class="care-secondary">
+           <div class="care-box">
+             <img src="../../assets/slider/slide2.jpg" alt="Soil and Fertilizer">
+             <div class="care-box-content">
+               <h3>Nourish Your Green Haven!</h3>
+               <p>Keep your plants thriving with our premium soil, fertilizers, and care essentials.</p>
+               <button class="care-button">Plant Care</button>
+             </div>
+           </div>
+           
+           <div class="care-box">
+             <img src="../../assets/slider/slide3.jpg" alt="Garden Decor">
+             <div class="care-box-content">
+               <h3>Elevate Your Garden's Charm!</h3>
+               <p>Discover elegant pots, planters, and décor that transform your garden into a serene paradise.</p>
+               <button class="care-button">Explore Décor</button>
+             </div>
+           </div>
+           <!-- <ng-container *ngFor="let item of decor">
+
+            <img [src]="item.image" alt="Soil and Fertilizer">
+            <div class="care-box-content">
+              <h3>{{item.heading}}</h3>
+              <p>{{item.describe}}</p>
+              <button class="care-button">{{item.shop}}</button>
+            </div>
+          </ng-container> -->
+         </div>
+       </div>
+     </section>
+   
+     <!-- Footer -->
+     <app-footer></app-footer>
+   </div>

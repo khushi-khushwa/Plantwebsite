@@ -1,0 +1,30 @@
+{
+  "service": [
+    {
+      "id": "3",
+      "image": "assets/images/gardening/23.png",
+      "title": "hedge",
+      "description": "Give your garden a neat, polished look with our Hedge Cutting Service. For just ₹700 per person, our skilled team will trim and shape your hedges, ensuring they are well-maintained and aesthetically pleasing. Whether it's a simple trim or a complete reshaping, we offer professional care to enhance the beauty of your outdoor space.",
+      "charges": "Rs 700/person",
+      "apply": "Apply",
+      "userdata": {
+        "name": "sad",
+        "email": "s@gmail.com",
+        "selectservice": "hedge"
+      }
+    },
+    {
+      "id": "1",
+      "image": "../assets/images/gardening/22.png",
+      "title": "Seed",
+      "description": "Our Seed Growing Service provides expert care to nurture your seeds into healthy plants. The base service charge is ₹100 when you provide the seeds. If you don't have seeds, we offer seed packages at an additional cost of ₹20 per package. Let us handle the growing process for you with precision and care.",
+      "charges": "Rs 100",
+      "apply": "Apply",
+      "userdata": {
+        "name": "khushi",
+        "email": "khushi@gmail.com",
+        "selectservice": "seed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!-- 
+
+<div class="container wishlist">
+     <div class="row">
+
+        <div class="col-lg-3 " *ngFor="let item of showWishItem" >
+            <div class="shadow wishlist-align p-4">
+            <div class="d-flex justify-content-center ">
+                <img [src]="item.image" class="image-size mt-4">
+            </div>
+            <h6 class="mb-0 mt-3">{{item.name}}</h6>
+            <p class="description"><small>{{item.description | slice : 0: 20  }}...</small></p>
+         
+                <img [src]="item.like" class="heart-img">
+         
+            <div class="d-flex align-items-center gap-5">
+                <span>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+            
+            </span>
+           
+            </div>
+            <div class="d-flex justify-content-around">
+                <button class="btn btn-success buy-btn mt-3"  (click)="remove(item.id)">Remove</button>
+                <button class="btn btn-success buy-btn mt-3" routerLink="buy">Buy</button>
+            </div>
+           
+        </div>
+     </div>
+</div> -->
+
+
+<!--  Wishlist Section -->
+<div class="container wishlist">
+    <div class="section-title">
+      <h2>My Wishlist</h2>
+      <p>Items you've saved for later purchase</p>
+    </div>
+    
+    <!-- Empty wishlist  -->
+    <div class="empty-wishlist" *ngIf="showWishItem && showWishItem.length === 0">
+      <i class="fa-regular fa-heart"></i>
+      <h3>Your wishlist is empty</h3>
+      <p>Add items to your wishlist to save them for later</p>
+      <a href="/shop" class="btn-shop">Shop Now</a>
+    </div>
+    
+    <!-- Wishlist items -->
+    <div class="row row-gap-4" *ngIf="showWishItem && showWishItem.length > 0">
+      <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of showWishItem">
+        <div class="shadow wishlist-align p-4">
+          
+          <img [src]="item.like" class="heart-img">
+          
+          <!-- Product image -->
+          <div class="image-container">
+            <img [src]="item.image" class="image-size">
+          </div>
+          
+          <!-- Product information -->
+          <div class="product-info">
+            <h6>{{item.name}}</h6>
+            <p class="description"><small>{{item.description | slice : 0: 60}}{{item.description.length > 60 ? '...' : ''}}</small></p>
+            
+            <!-- Star rating -->
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+          
+          <!-- Action buttons -->
+          <div class="action-buttons">
+            <button class="btn btn-remove buy-btn" (click)="remove(item.id)">
+              <i class="fa-solid fa-trash-can me-1"></i> Remove
+            </button>
+            <button class="btn btn-buy buy-btn" routerLink="buy">
+              <i class="fa-solid fa-bag-shopping me-1"></i> Buy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

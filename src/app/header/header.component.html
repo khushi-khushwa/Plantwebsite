@@ -1,0 +1,91 @@
+ 
+
+
+
+<!-- Upper Navbar Component -->
+<nav class="navbar-container">
+  <div class="navbar-upper">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="../../assets/shyam-01.png" alt="Plant Shop Logo">
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container" [formGroup]="filterdata">
+      <input class="search-input" type="text" placeholder="Search for plants..." formControlName="filter">
+      <button class="search-button" (click)="searchclick()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+    
+    <!-- Icons & Authentication -->
+    <div class="navbar-actions">
+      <a [routerLink]="'/wishlist'" class="icon-button">
+        <i class="fa-solid fa-heart"></i>
+        <span class="icon-label">Wishlist</span>
+      </a>
+      <a [routerLink]="'/cart'" class="icon-button">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="icon-label">Cart</span>
+      </a>
+      
+      <!-- Login Button (shows when logged out) -->
+      <button *ngIf="!login" [routerLink]="'/login'" class="login-button">
+        Login
+      </button>
+      
+      <!-- User Profile Menu (shows when logged in) -->
+      <div class="profile-dropdown" *ngIf="login">
+        <div class="profile-trigger">
+          <img src="../../assets/images/gardening/girl.jpg" alt="Profile" class="profile-image">
+          <span class="profile-arrow"><i class="fa-solid fa-angle-down"></i></span>
+        </div>
+        
+        <div class="dropdown-menu">
+          <a routerLink="profile" class="dropdown-item">
+            <i class="fa-solid fa-user"></i> Profile
+          </a>
+          <a routerLink="order" class="dropdown-item">
+            <i class="fa-solid fa-box"></i> Orders
+          </a>
+          <a routerLink="settings" class="dropdown-item">
+            <i class="fa-solid fa-gear"></i> Settings
+          </a>
+          <a routerLink="checkservice" class="dropdown-item">
+            <i class="fa-solid fa-check-circle"></i> Services
+          </a>
+          <a routerLink="logout" (click)="logout()" class="dropdown-item">
+            <i class="fa-solid fa-sign-out-alt"></i> Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Lower Navbar (Categories) -->
+  <div class="navbar-lower">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a [routerLink]="'/home'" [routerLinkActive]="'active'">HOME</a>
+      </li>
+      <li class="nav-item products-dropdown">
+        <a class=" showproducts">
+          PRODUCTS <i class="fa-solid fa-chevron-down"></i>
+        </a>
+        <ul class="products-menu">
+          <li><a [routerLink]="'/indoor'">Indoor Plants</a></li>
+          <li><a [routerLink]="'/outdoor'">Outdoor Plants</a></li>
+          <li><a [routerLink]="'/compost'">Compost</a></li>
+          <li><a [routerLink]="'/seeds'">Seeds</a></li>
+          <li><a [routerLink]="'/pots'">Pots</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="'/seasonal'" [routerLinkActive]="'active'">SEASONAL</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="'/gardening'" [routerLinkActive]="'active'">GARDENING</a>
+      </li>
+    </ul>
+  </div>
+</nav>

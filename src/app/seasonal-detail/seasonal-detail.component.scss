@@ -1,0 +1,314 @@
+
+.compost {
+    position: relative;
+    top: 3rem;
+    padding-bottom: 5rem;
+}
+
+/* Product Detail Styles */
+.compost-detail {
+    position: relative;
+}
+
+.compost-detail p {
+    color: rgb(107, 107, 104);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.compost-detail h5 {
+    color: rgb(8, 167, 8);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Image Section */
+.select-image {
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.select-image .img-fluid {
+    background-color: rgba(222, 219, 219, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.select-image .img-fluid:hover {
+    transform: scale(1.05);
+}
+
+/* Wishlist Icons */
+.heart-img {
+    width: 2rem;
+    height: auto;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.heart-img:hover {
+    transform: scale(1.2);
+}
+
+.white-img {
+    width: 2rem;
+    height: auto;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    background-color: pink;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.white-img:hover {
+    transform: scale(1.2);
+}
+
+/* Button Styles */
+.buy-btn, .cart-btn {
+    width: 7rem;
+    height: 2.5rem;
+    background-color: rgb(8, 167, 8);
+    font-size: 1rem;
+    border-radius: 3rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(8, 167, 8, 0.2);
+}
+
+.buy-btn:hover, .cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(8, 167, 8, 0.3);
+    background-color: rgb(7, 147, 7);
+    color: white;
+}
+
+/* Price Display */
+.fakeprice, .fixed-price {
+    color: rgb(6, 148, 6);
+    font-size: 1.3rem;
+}
+
+.fakeprice {
+    opacity: 0.7;
+}
+
+/* Shipping Details */
+.charges-detail p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.charges-detail ul {
+    padding-left: 1.2rem;
+}
+
+.charges-detail ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styling */
+form {
+    position: relative;
+}
+
+.comment-input button {
+    position: absolute;
+    top: 0;
+    right: 0rem;
+}
+
+/* Comment Section */
+.comment-section p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.comment-section ul li {
+    list-style: none;
+}
+
+.usercomment {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.makealign {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.circle {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #19c32c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+  
+.circle p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+/* Form Buttons */
+form .buttons {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+form .buttons button {
+    background-color: #09ab4a;
+    border-radius: 15px;
+    color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* Tab Navigation */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+}
+
+.description-container {
+    margin: 5rem 0rem;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: white;
+    background-color: #19c32c;
+    border-radius: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+    color: black;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: rgba(25, 195, 44, 0.1);
+    border-radius: 2.5rem;
+}
+
+/* File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Rating System */
+.rating-list {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0;
+}
+
+.rating-list li {
+    font-size: 24px;
+    float: right;
+    color: #ddd;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+.rating-list li:hover {
+    color: #ffd700;
+}
+
+.rating-list li:hover ~ li {
+    color: #ffd700;
+}
+
+.rating-list li.selected {
+    color: #ffd700;
+}
+
+/* Comment Button */
+.commentbutton {
+    color: white;
+    background-color: #19c32c;
+    border-radius: 10px;
+    border: none;
+    height: 3rem;
+    width: 7rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(25, 195, 44, 0.2);
+}
+
+.commentbutton:hover {
+    background-color: #17b129;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(25, 195, 44, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .compost-detail {
+        padding-left: 0 !important;
+    }
+    
+    .buy-btn, .cart-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .heart-img, .white-img {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+/* Material Form Field Customization */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ddd;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #19c32c;
+}
+
+::ng-deep .mat-input-element {
+    caret-color: #19c32c;
+}
+
+::ng-deep .mat-form-field-label {
+    color: #888;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+    color: #19c32c;
+}
+
+.height-to-scroll {
+    height: 300px; 
+    overflow: hidden;
+  }
+  
+  .scroll {
+    height: 100%;
+    overflow-y: auto; 
+    padding-right: 10px; 
+  }

@@ -1,0 +1,64 @@
+
+<div class="container-fluid outdoor">
+    <div class="maxoutdoor">
+      <div class="section-title">
+        <h2>Outdoor Plants Collection</h2>
+        <p>Premium plants to beautify your garden space</p>
+      </div>
+      
+      <div class="row row-gap-4">
+        <div class="col-lg-3 give-height">
+          <div class="filter-sidebar">
+            <h3>Categories</h3>
+            <ul>
+              <li><a >Flowering Plants</a></li>
+              <li><a >Fruit Trees</a></li>
+              <li><a >Ornamental Plants</a></li>
+              <li><a >Shrubs & Bushes</a></li>
+              <li><a >Climbing Plants</a></li>
+            </ul>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda mollitia voluptatem dicta adipisci sunt animi aspernatur accusantium neque! Tempora molestias placeat alias deserunt aut nam mollitia non similique quasi illo.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-9 scroll">
+          <div class="row row-gap-4">
+            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let products of allCompost">
+              <div class="p-4 outdoor-detail" (click)="onbuy(products)">
+            
+                <span class="badge-new" *ngIf="products.isNew">New</span>
+                <span class="badge-special" *ngIf="products.isSpecial">Sale</span>
+                
+              
+                <div class="d-flex justify-content-center">
+                  <img [src]="products.image" class="image-size">
+                </div>
+                
+                <div class="image-bottom-part">
+                  <div class="d-flex align-items-center justify-content-center star">
+                    <span>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half-stroke"></i>
+                      <i class="fa-regular fa-star"></i>
+                    </span>
+                  </div>
+                  
+                  <h6>{{products.name | slice : 0:10}}</h6>
+                  
+                  <div>
+                    <span class="correct_price">Rs.{{products.price}}</span>&nbsp;<span><del class="fakeprice">{{products.fakeprice}}</del></span>
+                  </div>
+                  
+                  <!-- Add "Buy Now" button -->
+                  <button class="buy-btn">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

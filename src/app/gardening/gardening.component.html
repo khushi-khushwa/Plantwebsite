@@ -1,0 +1,339 @@
+<!-- <section class=" top">  -->
+ 
+
+    <div class="full-black">
+      <div class="first_section">
+        <div class="col-lg-12">
+    
+          <div class="center-text">
+            <div class=" headings">
+    
+              <h1>Plants Beauties For Every Space.</h1>
+              <img />
+              <p> Bring nature into your home with our handpicked collection of vibrant, fresh, and easy-to-care-for plants</p>
+              <div class=" calling">
+                  <mat-icon> call</mat-icon>
+                <div class="contact-number">
+                  <p>call Us Now</p>
+                  <p>5457896789</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </section> -->
+    <div class="bigsection">
+    
+      <div class="container-fluid  second-section">
+        <div class="container upper-div">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="   star " >
+                  <span class="d-flex align-items-center justify-content-between  ">
+                  <i class="fa-solid fa-star "></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+              </span>
+            <p class="pb-0 mb-0">(5/5)</p>
+              </div>
+              <div class="quality-detail">
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ad
+                  quaerat minima similique mollitia at voluptatibus consequatur eaque
+                  atque. Vitae, autem?
+                </p>
+      
+                <hr class="bg-success" />
+                <div class="text-white testimonial">
+                  <div class="testmonial-image">
+                    <img src="../../assets/images/gardening/girl.jpg" />
+                  </div>
+                  <div>
+                    <p class="mb-0 pt-3">Estelle Darcy</p>
+                    <p class="mb-0 ">Our Client</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-8">
+              <div class="leaf-image">
+                <div class="money_image">
+                  <img src="../../assets/images/gardening/leaf.png" />
+                </div>
+      
+                <div
+                  class="quality-plant quality d-flex justify-content-center my-2 quality_div"
+                >
+                  <p>Good Quality Plant</p>
+                </div>
+      
+                <div
+                  class="quality-plant payment d-flex justify-content-center gap-2 my-2 Payment_div"
+                >
+                  <p>Quick Payment</p>
+                </div>
+                <div
+                  class="quality-plant service d-flex justify-content-center my-2 service_div"
+                >
+                  <p>24/7 Fast Service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="text-center">Our Best Seller Plant</h3>
+              <owl-carousel-o [options]="carouselOptions">
+                <ng-container class="seller " *ngFor="let data of seller">
+                  <ng-template carouselSlide>
+                    <div class=" seller-image">
+                      <img [src]="data.image" />
+                    </div>
+                    
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="container-fluid my-3 bestseller" >
+        <div class="container">
+          <div class="row">
+            <h1 class="text-center " >Our Best Seller Plant</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis ab voluptatum.</p>
+            <div class="col-lg-12">
+            <div class="sellerdiv">
+              <owl-carousel-o [options]="carouselOptions">
+                <ng-template *ngFor="let data of seller" carouselSlide>
+             <div class="wdswd">
+
+               <div class=" seller-image">
+                 <img [src]="data.image" />
+               </div>
+                 <div class="abouttheimage">
+                      <h5 class="">{{data.name}}</h5>
+                 </div>
+             </div>
+                </ng-template>
+              </owl-carousel-o>
+            </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- <div class="container-fluid service_container ">
+        <div class="container">
+          <div class="row">
+            <h1 class="text-white text-center ">Service We Provide </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sapiente sed illum!</p>
+            <div class="col-lg-4" *ngFor="let service of applyservice">
+              <div class="service   d-flex gap-3 justify-content-center ">
+             <div class="service_bg-color">
+              <div  class=" d-flex  justify-content-center  align-items-center ">
+            <img [src]="service.image" />
+          </div>
+      
+          <div class="text-center">
+            <h4 class="m-0">{{ service.title }}</h4>
+            <span class="px-5">
+               <p class="m-0 pb-0">{{ service.description | slice : 0 : 70 }}...</p>
+            </span>
+            <span class="d-flex justify-content-center align-items-center gap-3 more-button" (click)=apply(service) >
+              <button class=" ">Learn More </button><mat-icon>arrow_forward</mat-icon>
+            </span>
+            
+          </div>
+      </div>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="service-section">
+        <div class="container">
+          <div class="section-header">
+            <h1 class="section-title">Services We Provide</h1>
+            <div class="section-subtitle">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sapiente sed illum!</p>
+            </div>
+            <div class="section-divider">
+              <span class="divider-line"></span>
+              <span class="divider-icon">
+                <mat-icon>star</mat-icon>
+              </span>
+              <span class="divider-line"></span>
+            </div>
+          </div>
+          
+          <div class="row row-gap-5 service-cards">
+            <div class="col-lg-4 col-md-6" *ngFor="let service of applyservice">
+              <div class="service-card">
+                <div class="service-icon">
+                  <img [src]="service.image" alt="{{ service.title }}"/>
+                </div>
+                
+                <div class="service-content">
+                  <h4 class="service-title">{{ service.title }}</h4>
+                  <p class="service-description">{{ service.description | slice : 0 : 70 }}...</p>
+                  
+                  <div class="service-action" (click)="apply(service)">
+                    <button class="learn-more-btn">
+                      Learn More
+                      <mat-icon class="btn-icon">arrow_forward</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container counting_div">
+        <div class="row">
+          <div class="col-lg-6 col-md-3 d-flex  ">
+             <div>
+             <h1 class="heading_garden"> WE ACHIEVED BEST <br> FROM GARDENING</h1>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 d-flex  flex-column justify-content-center count-head">
+              <h1 >{{projectcount}}+</h1>
+              <p>Happy Customer</p>
+            </div>
+    
+          <div class="col-lg-2 col-md-3 count-head d-flex flex-column justify-content-center">
+         
+    
+              <h1 >{{typeplant}}+</h1>
+            <p>Type of plant</p>
+        
+          </div>
+          <div class="col-lg-2  col-md-3 count-head d-flex flex-column  justify-content-center">
+     
+              <h1 >{{goodstaff}}+</h1>
+              <p>Good Staff</p>
+    
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+<div class="container-fluid testmonial-container">
+
+  <div class="container testimonialslide">
+    <div class="row">
+      <h1 class="heading-testmonial">what they say about us?</h1>
+ <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+       <div class="col-lg-12">
+         <div class="testimonialslide" >
+          <owl-carousel-o [options]="option">
+            <ng-template *ngFor="let data of testimonial" carouselSlide>
+  <div class="contentslide">
+  
+    <div class="  testimonial-star " >
+      <span class="d-flex align-items-center justify-content-between  ">
+      <i class="fa-solid fa-star "></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star-half-stroke"></i>
+      <i class="fa-regular fa-star"></i>
+  </span>
+  
+  </div>
+  <div class="client-review pt-3">
+    <p>
+      {{data.text}}
+    </p>
+  
+    <hr class="bg-success" />
+    <div class="text-white testimonial">
+      <div class="testmonial-image">
+        <img [src]="data.image">
+      </div>
+      <div>
+        <p class="mb-0 pt-3">{{data.name}}</p>
+        <p class="mb-0 ">{{data.client}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+            </ng-template>
+          </owl-carousel-o>
+         </div>
+       </div>
+    </div>
+  
+  </div>
+</div>
+<div class="container-fluid frequently">
+
+  <div class="container ">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="questionask">
+            <h1>Frequently Asked Questions</h1>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus</p>
+          </div>
+        </div>
+        <div class="col-lg-7" >
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" *ngFor="let ques of question">
+              <h2 class="accordion-header">
+                <button class=" accord-button collapsed" type="button" 
+                  data-bs-toggle="collapse" 
+                  [attr.data-bs-target]="'#' + ques.id" 
+                  aria-expanded="false" 
+                  [attr.aria-controls]="ques.id">
+                  {{ ques.ques }}
+                </button>
+              </h2>
+              <div [id]="ques.id" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  {{ ques.ans }}
+                </div>
+              </div>
+            </div>
+          </div>
+          
+  </div>
+  </div>
+  </div>
+</div>
+    
+
+
+<div class="container-fluid fd">
+     <div class="row">
+  <div class="col-lg-12">
+    <div class="greenimage">
+       <p class="text-white">Plant Need Sunlight To Make Food</p>
+       <span (click)="videoplay()">
+           <img src="../../assets/play.png"  />
+       </span>
+    </div>
+  </div>
+     </div>
+
+</div>
+  
+
+<app-footer></app-footer>
