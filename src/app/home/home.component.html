@@ -60,11 +60,11 @@
            </div>
            
            <div class="product-grid">
-             <div class="product-card" *ngFor="let product of image" [routerLink]="'/product-list'">
+             <div class="product-card" *ngFor="let product of image" (click)="moveto(product.route)">
                <div class="product-image-container">
                  <img [src]="product.image" alt="{{product.name}}" class="product-image">
                  <div class="product-actions">
-                   <button class="action-button"><i class="fa-solid fa-heart"></i></button>
+                   <button class="action-button" (click)="gottowish(product)"><i class="fa-solid fa-heart"></i></button>
                    <button class="action-button"><i class="fa-solid fa-cart-shopping"></i></button>
                  </div>
                </div>

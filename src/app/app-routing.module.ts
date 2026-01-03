@@ -35,6 +35,8 @@ import { SearchitemComponent } from './searchitem/searchitem.component';
 import { SearchdetailComponent } from './searchdetail/searchdetail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ApplyservicesComponent } from './applyservices/applyservices.component';
+import { ToolsComponent } from './tools/tools.component';
+import { ToolsDetailsComponent } from './tools-details/tools-details.component';
 // import { CanActivate } from '@angular/router';
 
 const routes: Routes = [
@@ -42,6 +44,7 @@ const routes: Routes = [
   {path:'', redirectTo:'/login', pathMatch:'full', },
   {path:'signup', component:SignupComponent,  },
   {path:'login', component:LoginComponent},
+
   {path:'home', component:HomeComponent, 
   },
   {path:"gardening", component:GardeningComponent},
@@ -66,6 +69,8 @@ const routes: Routes = [
   {path:'pots-detail/:id', component:PotsDetailComponent},
   {path:'searchitem', component:SearchitemComponent},
   {path:'search-detail/:id', component:SearchdetailComponent},
+  {path:'tools', component:ToolsComponent},
+  {path:'tools-detail/:id', component:ToolsDetailsComponent},
   // {path:'wishlist', component:whishlistComponent},
   // {path:'cart', component:CartComponent},
   {path:'buyitem/:id', component:BuyitemComponent},

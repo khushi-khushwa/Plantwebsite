@@ -83,8 +83,13 @@
       <li class="nav-item">
         <a [routerLink]="'/seasonal'" [routerLinkActive]="'active'">SEASONAL</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item products-dropdown">
         <a [routerLink]="'/gardening'" [routerLinkActive]="'active'">GARDENING</a>
+           <ul class="products-menu">
+            <li >
+              <a [routerLink]="'/tools'">Tools</a>
+            </li>
+           </ul>
       </li>
     </ul>
   </div>

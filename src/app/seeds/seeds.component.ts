@@ -43,27 +43,27 @@ this.cursrent.getPlants().subscribe(data => {
     
   }
 
-  onSubmit(): void {
-    if (this.selectedImage) {
-      this.cursrent.addPlant(this.plantData, this.selectedImage).subscribe(
-        (response) => {
-          console.log('Plant added successfully', response);
-        },
-        (error) => {
-          console.error('Error adding plant', error);
-        }
-      );
-    } else {
-      alert('Please select an image');
-    }
-  }
+  // onSubmit(): void {
+  //   if (this.selectedImage) {
+  //     this.cursrent.addPlant(this.plantData, this.selectedImage).subscribe(
+  //       (response) => {
+  //         console.log('Plant added successfully', response);
+  //       },
+  //       (error) => {
+  //         console.error('Error adding plant', error);
+  //       }
+  //     );
+  //   } else {
+  //     alert('Please select an image');
+  //   }
+  // }
 
   // Method to handle file input change
-  onFileChange(event: any): void {
-    if (event.target.files.length > 0) {
-      this.selectedImage = event.target.files[0];
-    }
-  }
+  // onFileChange(event: any): void {
+  //   if (event.target.files.length > 0) {
+  //     this.selectedImage = event.target.files[0];
+  //   }
+  // }
 
 
 

@@ -70,6 +70,7 @@ export class IndoorDetailComponent implements OnInit {
   
     this.activeroute.paramMap.subscribe((param:ParamMap)=>{
       this.indoorId = param.get('id');
+      console.log(this.indoorId, this.displayItem)
       this.getproducts()
     });
     

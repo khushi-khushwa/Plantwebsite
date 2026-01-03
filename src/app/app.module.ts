@@ -61,6 +61,8 @@ import { VideoplayComponent } from './videoplay/videoplay.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ApplyservicesComponent } from './applyservices/applyservices.component';
 import { SanitizerPipe } from './sanitizer.pipe';
+import { ToolsComponent } from './tools/tools.component';
+import { ToolsDetailsComponent } from './tools-details/tools-details.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +106,8 @@ import { SanitizerPipe } from './sanitizer.pipe';
     ProfileComponent,
     ApplyservicesComponent,
     SanitizerPipe,
+    ToolsComponent,
+    ToolsDetailsComponent,
   ],
   imports: [
     BrowserAnimationsModule,

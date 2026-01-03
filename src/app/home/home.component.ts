@@ -22,16 +22,19 @@ image = [
   image: "assets/saleoff/p6.png",
   name: "Ficus Pandrata",
   price: "Rs. 1000", 
+  route:'indoor'
 },
 {
   image: "assets/saleoff/p10.png",
   name: "Ficus Pandrata",
-  price: "Rs. 1000", 
+  price: "Rs. 1000",
+   route:'indoor' 
 },
 {
   image: "assets/saleoff/p9.png",
   name: "Camille in Pot",
   price: "Rs. 1000", 
+   route:'indoor'
 },
 {
   image: "assets/saleoff/p5.png",
@@ -47,51 +50,61 @@ image = [
   image: "assets/saleoff/kurpi.png",
   name: "Kurpi",
   price: "Rs. 300", 
+   route:'tools'
 },
 {
   image: "assets/saleoff/favda.png",
   name: "Favda",
   price: "Rs. 1000", 
+   route:'tools'
 },
 {
   image: "assets/saleoff/pransplanter.png",
   name: "pransplanter",
   price: "Rs. 1000", 
+   route:'tools'
 },
 {
   image: "assets/saleoff/pruning.png",
   name: "Cutter",
   price: "Rs. 1000", 
+   route:'tools'
 },
 {
   image: "assets/saleoff/water.png",
   name: "Water mug",
   price: "Rs. 1000", 
+   route:'tools'
 },
 {
   image: "assets/saleoff/adeniyam.png",
   name: "Adeniyam",
-  price: "Rs. 1000", 
+  price: "Rs. 1000",
+   route:'outdoor' 
 },
 {
   image: "assets/saleoff/lily.png",
   name: "Lily",
   price: "Rs. 1000", 
+   route:'outdoor'
 },
 {
   image: "assets/saleoff/yellow.png",
   name: "Yellow Lily",
   price: "Rs. 1000", 
+   route:'outdoor'
 },
 {
   image: "assets/saleoff/marrygold.png",
   name: "Marrygold",
   price: "Rs. 1000", 
+   route:'outdoor'
 },
 {
   image: "assets/saleoff/pinkrose.png",
   name: "Pinkrose",
   price: "Rs. 1000", 
+   route:'outdoor'
 },
 
 ];
@@ -400,9 +413,6 @@ allProducts:any={};
     console.log(this.outdoor)
     this.tools=this.allProducts.tools
   
-
-
-
   }
 
 
@@ -459,7 +469,17 @@ allProducts:any={};
     },
     nav: true
   }
+
+moveto(r){
+this.router.navigate([r])
+}
+    gottowish(product){
+     console.log(product)
+     this.router.navigate(['wishlist'])
   }
+  }
+
+
 
 
 

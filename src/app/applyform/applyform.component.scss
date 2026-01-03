@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(229, 226, 226, 0.661);
+    width:100%;
 }
 
 .formrow{
@@ -16,4 +17,21 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
 
+
+}
+
+@media (max-width : 1200px ){
+    .formrow{
+    width:50%;
+}}
+
+// @media (max-width : 1200px ){
+//     .formrow{
+//     width:50%;
+// }}
+
+@media (max-width : 800px ){
+    .formrow{
+    width:90%;
+}
 }
