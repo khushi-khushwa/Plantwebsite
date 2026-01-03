@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
       ]
     },
     {
-      heading: "service",
+      heading: "Service",
       detailData: [
         { name: "about us" },
         { name: "Contact" },
@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
       ]
     },
     {
-      heading: "extra",
+      heading: "Extra",
       detailData: [
         { name: "Search" },
         { name: "wishlist" },
@@ -36,7 +36,7 @@ export class FooterComponent implements OnInit {
       ]
     },
     {
-      heading: "contact",
+      heading: "Contact",
       detailData: [
         { icon: "fa-solid fa-phone", contact: "324567876543" },
         { icon: "fa-solid fa-envelope", contact: "shyam3gmail.com" },
