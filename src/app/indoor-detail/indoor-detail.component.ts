@@ -36,6 +36,7 @@ export class IndoorDetailComponent implements OnInit {
   cartitem:any
   listOfNames: string[] = [];
   whitehidden:boolean=true;
+   wishlistItems: any[] = [];
     commentForm :FormGroup;
      redhidden:boolean=false;
   indoorId:any
@@ -101,6 +102,16 @@ export class IndoorDetailComponent implements OnInit {
   }
   
  
+    
+   getitem():void{
+    this.cart.getitem().subscribe({
+     next: (data) =>{
+       console.log('cart items',data);
+       this.cartitem=data
+     }
+    });
+   }
+
   getproducts(){
 
     if(this.displayItem && this.indoorId){
@@ -110,7 +121,8 @@ export class IndoorDetailComponent implements OnInit {
         console.log('product not found')
       }
       else{
-        console.log('product is found')
+        console.log('product is found');
+ this.checkWishlistStatus(this.displayItem.id)
       }
    }
   }
@@ -144,16 +156,40 @@ export class IndoorDetailComponent implements OnInit {
  addComment(): void {
    
   this.comment.comment(this.newComment)
-    
+      
+  this.comments = [...this.comment.comments];
+  this.listOfNames = [...this.comment.getListOfName()];
+
+  this.newComment = '';
   }
- getitem():void{
-  this.cart.getitem().subscribe({
-   next: (data) =>{
-     console.log('cart items',data);
-     this.cartitem=data
-   }
-  });
- }
+
+removeitem(id){
+this.whitehidden=true;
+this.redhidden=false;
+console.log('sdfghjnk')
+
+    console.log(id);
+    
+  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
+  
+}
+
 
 // wishlist----------------------------
  getWishItem():void{
@@ -165,6 +201,19 @@ export class IndoorDetailComponent implements OnInit {
  }
 
 
+
+ checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
+  next: (data) =>{
+    console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item.id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
+  }
+})
+}
 
 wishItem(productId):void{
 console.log(productId,'sdfgh')
@@ -196,11 +245,7 @@ buyProduct(product:any){
   this.route.navigate(['/buyitem',product.id])
 };
 
-additem(){
-this.whitehidden=true;
-this.redhidden=false;
-console.log('sdfghjnk')
-}
+
 
 
 loadVideos() {

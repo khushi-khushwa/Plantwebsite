@@ -59,7 +59,7 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
         console.log('product not found')
        }
        else{
-        console.log('product is found')
+        console.log('product is found');
        }
     }
 
@@ -103,8 +103,7 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
     if(whishProduct){
       this.wishlist.addWishlistItem(whishProduct).subscribe({
         next:()=>{
-          alert('item add to the wishlist');
-          this.getWishItem()
+        
         },
         error : (error)=>{
           console.log('not add in wishlist',error);
@@ -113,25 +112,36 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
     }
   }
 
-  getWishItem():void{
-    this.wishlist.wishlistItem().subscribe({
-      next: (data) =>{
-        console.log('wishlist item', data);
-      }
-    })
- }
+ 
 
   buyProduct(product:any){
     this.route.navigate(['/buyitem',product.id])
   };
 
-  additem(){
-    this.whitehidden=true;
-    this.redhidden=false;
-    console.log('sdfghjnk')
-    }
 
     
+    removeitem(id){
+this.whitehidden=true;
+this.redhidden=false;
+console.log('sdfghjnk')
+
+    console.log(id);
+    
+  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+          
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
+  
+}
+
   countStar(star){
     this.selectedValue = star;
     console.log(star);

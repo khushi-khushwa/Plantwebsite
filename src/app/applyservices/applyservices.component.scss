@@ -25,15 +25,15 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     margin-bottom: 1rem;
-    border-left: 4px solid #0ca11d;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: border-color 0.1s ease ;
   }
   
   .service-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+       border-bottom: 4px solid #0ca11d;
   }
   
   .service-info {
@@ -42,16 +42,8 @@
   }
   
   .service-number {
-    background: #0c881f;
-    color: white;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    font-size: 14px;
+    color: #0c881f;
+    font-size: 2rem;
     margin-right: 15px;
   }
   
@@ -70,7 +62,7 @@
   .service-head{
     display: flex;
     justify-content: space-between;
-    // padding: 0px 10px 0px 10px;
+    
   }
   .service-description {
     margin: 5px 0 0;

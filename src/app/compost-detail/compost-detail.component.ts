@@ -38,6 +38,7 @@ export class CompostDetailComponent implements OnInit {
   productdetail: any;
   printvalue: string = '';
   displayItem;
+   wishlistItems: any[] = [];
   comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
   newComment: string = '';
   stars: number[] = [1, 2, 3, 4, 5];
@@ -71,9 +72,14 @@ export class CompostDetailComponent implements OnInit {
  
 
     
-  addComment(): void {
+ addComment(): void {
+   
   this.comment.comment(this.newComment)
-    
+      
+  this.comments = [...this.comment.comments];
+  this.listOfNames = [...this.comment.getListOfName()];
+
+  this.newComment = '';
   }
 
   getproduct(): void {
@@ -90,6 +96,8 @@ export class CompostDetailComponent implements OnInit {
       }
     } else {
       console.log('product found');
+      this.checkWishlistStatus(this.displayItem.id)
+
     }
   }
 
@@ -141,6 +149,19 @@ export class CompostDetailComponent implements OnInit {
     });
   }
 
+  checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
+  next: (data) =>{
+    console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item.id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
+  }
+})
+}
+
   wishItem(productId: number): void {
     console.log(productId, 'sdfgh');
     this.whitehidden = false;
@@ -166,11 +187,6 @@ export class CompostDetailComponent implements OnInit {
     }
   }
 
-  additem() {
-    this.whitehidden = true;
-    this.redhidden = false;
-    console.log('sdfghjnk');
-  }
 
   getadsa() {
     const commentvalue = this.commentForm.get('comment').value;
@@ -178,7 +194,33 @@ export class CompostDetailComponent implements OnInit {
   }
 
 
+  removeitem(id){
+this.whitehidden=true;
+this.redhidden=false;
+console.log('sdfghjnk')
+
+    console.log(id);
+    
+ 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
   
+}
+
 countStar(star){
   this.selectedValue = star;
   console.log(star);

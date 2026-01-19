@@ -122,6 +122,67 @@
         }
       },
       "totalpay": 557
+    },
+    {
+      "id": "indoor-2",
+      "catergory": "indoor",
+      "name": "Elephant bush",
+      "image": "assets/images/indoor/3.png",
+      "price": "169",
+      "fakeprice": "100",
+      "like": "assets/images/red-icon.jpg",
+      "dislike": "assets/images/dislike.jpg",
+      "reviews": "",
+      "off": "",
+      "details": {
+        "description": [
+          "Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.",
+          "Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost."
+        ],
+        "instruction": [
+          "Keep this product away from the reach of children below 3 years"
+        ],
+        "benefits": [
+          "Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity"
+        ],
+        "use": [
+          "To fill pots/containers, vertical gardens, bio walls for growing Plants",
+          "To prepare raised beds for growing Plants",
+          "To repot plants",
+          "To amend existing soil in pots"
+        ],
+        "notes": [
+          "This soil does not contain any specialized fertilizer like flowering or fruiting booste",
+          "Store this soil in cool & dry place."
+        ]
+      },
+      "shippingCharges": "70",
+      "dispatch": "7 days",
+      "origin": "india",
+      "description": "Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash",
+      "sale": "",
+      "user": {
+        "contactDetail": {
+          "name": "khush",
+          "email": "kh@gmail.com",
+          "password": "2645869"
+        },
+        "deliveryDetail": {
+          "country": "sf",
+          "address": "sfsf",
+          "city": "sff",
+          "zipcode": "200123"
+        },
+        "paymentDetail": {
+          "UPI": "",
+          "wallets": "",
+          "Credit/Debit": "",
+          "netbanking": "",
+          "Cash on Delivery": ""
+        }
+      },
+      "totalpay": 219,
+      "date": "2026-01-19T06:56:51.493Z"
     }
   ]
 }

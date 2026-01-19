@@ -30,7 +30,8 @@ export class SeedsDetailComponent implements OnInit {
          seedId:any
      dataproduct:any
      displayItem:any
-     printvalue:any
+     printvalue:any;
+      wishlistItems: any[] = [];
      selectedValue: number = 0;
     comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
     newComment: string = '';
@@ -57,9 +58,15 @@ export class SeedsDetailComponent implements OnInit {
       
         }
 
-        addComment(): void {
-          this.comment.comment(this.newComment)
-          }
+         addComment(): void {
+   
+  this.comment.comment(this.newComment)
+      
+  this.comments = [...this.comment.comments];
+  this.listOfNames = [...this.comment.getListOfName()];
+
+  this.newComment = '';
+  }
 
         getproducts(){
           if(this.displayItem && this.seedId){
@@ -71,6 +78,7 @@ export class SeedsDetailComponent implements OnInit {
             }
             else{
               console.log('product is found')
+              this.checkWishlistStatus(this.displayItem)
             }
          }
         }
@@ -121,6 +129,46 @@ export class SeedsDetailComponent implements OnInit {
       
       
       
+       checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
+  next: (data) =>{
+    console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item.id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
+  }
+})
+}
+
+removeitem(id){
+this.whitehidden=true;
+this.redhidden=false;
+console.log('sdfghjnk')
+
+    console.log(id);
+    
+  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
+  
+}
+
       wishItem(productId):void{
       console.log(productId,'sdfgh')
       this.whitehidden=false;

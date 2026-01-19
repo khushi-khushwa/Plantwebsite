@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,16 +12,18 @@ export class ServicesService {
   constructor(private http:HttpClient) {}
 
 
-  getitem(){
-    return this.http.get(this.carturl)
-  }
-
+  // getitem(){
+  //   return this.http.get(this.carturl)
+  // }
+  getitem(): Observable<any[]> {
+  return this.http.get<any[]>(this.carturl);
+}
   addItem(item:any){
     return this.http.post(this.carturl,item)
   }
    
-  removeCartItem(id){
-    return this.http.delete(`${this.carturl}/${id}`)
+  removeCartItem(id):Observable<any[]>{
+    return this.http.delete<any[]>(`${this.carturl}/${id}`)
   }
 
 

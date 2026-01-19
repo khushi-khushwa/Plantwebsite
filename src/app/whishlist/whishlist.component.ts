@@ -28,8 +28,8 @@ wishitem:any
    remove(id: string): void {
     console.log(id);
     
-    const itemExists = this.showWishItem.filter(item => item.id !== id); 
-    if (itemExists) {
+   this.showWishItem = this.showWishItem.filter(item => item.id !== id); 
+    if (this.showWishItem) {
       this.wishlist.deleteWishlistItem(id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);

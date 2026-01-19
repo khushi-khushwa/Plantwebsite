@@ -36,21 +36,22 @@
 
 <!--  Wishlist Section -->
 <div class="container wishlist">
-    <div class="section-title">
-      <h2>My Wishlist</h2>
-      <p>Items you've saved for later purchase</p>
-    </div>
+  
     
     <!-- Empty wishlist  -->
     <div class="empty-wishlist" *ngIf="showWishItem && showWishItem.length === 0">
       <i class="fa-regular fa-heart"></i>
       <h3>Your wishlist is empty</h3>
       <p>Add items to your wishlist to save them for later</p>
-      <a href="/shop" class="btn-shop">Shop Now</a>
+      <!-- <button class="btn-shop">Shop Now</button> -->
     </div>
-    
+   
     <!-- Wishlist items -->
     <div class="row row-gap-4" *ngIf="showWishItem && showWishItem.length > 0">
+         <div class="section-title">
+      <h2>My Wishlist</h2>
+      <p>Items you've saved for later purchase</p>
+    </div>
       <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of showWishItem">
         <div class="shadow wishlist-align p-4">
           
@@ -79,10 +80,10 @@
           <!-- Action buttons -->
           <div class="action-buttons">
             <button class="btn btn-remove buy-btn" (click)="remove(item.id)">
-              <i class="fa-solid fa-trash-can me-1"></i> Remove
+              <i class="fa-solid fa-trash-can me-1 text-white"></i><span class="text-white">Remove</span> 
             </button>
             <button class="btn btn-buy buy-btn" routerLink="buy">
-              <i class="fa-solid fa-bag-shopping me-1"></i> Buy
+              <i class="fa-solid fa-bag-shopping me-1 text-white"></i><span class="text-white">Buy</span>
             </button>
           </div>
         </div>

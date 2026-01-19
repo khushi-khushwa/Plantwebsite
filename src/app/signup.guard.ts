@@ -14,10 +14,10 @@ export class SignupGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(this.authservice.hasSignup()){
       this.route.navigate(['/login']); 
-      return true;
+      return false;
     }else{
      
-      return false;
+      return true;
   }
 
     ;

@@ -203,6 +203,8 @@ add(){
 orderConfirm(){
   this.deliveryitem['user'] = this.orderDetail.value 
   this.deliveryitem['totalpay']=this.totalpay
+  this.deliveryitem["date"] = new Date()
+  console.log(this.deliveryitem)
   // const data = {
   //   userdata,
   

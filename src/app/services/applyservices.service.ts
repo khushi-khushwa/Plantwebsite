@@ -10918,6 +10918,7 @@ outdoor:[
         image:"assets/seasonal/32.png",
         price:'100',
         like:'assets/images/red-icon.jpg',
+           dislike:'assets/images/dislike.jpg',
         details:{
           description:[
             'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
@@ -10940,7 +10941,7 @@ outdoor:[
         shippingCharges:'70',
         dispatch:"7 days",
         origin:"india",
-        dislike:'assets/images/dislike.jpg',
+     
    
         description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
       
@@ -11475,153 +11476,529 @@ outdoor:[
       catergory:'tools',
       price:'169',
       image:"assets/images/tools/3.jpg",
-      fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+        
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-2",
       name:'carrot',
-      price:'169',
+
        catergory:'tools',
       image:"assets/images/tools/4.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+        price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-3",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+      
       image:"assets/images/tools/6.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+        price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-4",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+    
       image:"assets/images/tools/8.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+        price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-5",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+ 
       image:"assets/images/tools/10.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+         price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-6",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+
       image:"assets/images/tools/7.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+         price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-7",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+   
       image:"assets/images/tools/8.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+      price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-8",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+  
       image:"assets/images/tools/picAxe4.webp",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+       price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-9",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+
       image:"assets/images/tools/7.webp",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+      price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-10",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+
       image:"assets/images/tools/9.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+      price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-11",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+      
       image:"assets/images/tools/9.webp",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+       price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-12",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+
       image:"assets/images/tools/3.jpg",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+     price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-13",
       name:'carrot',
        catergory:'tools',
-      price:'169',
+
       image:"assets/images/tools/4.webp",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+    price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
     {
       id:"tool-14",
       name:'carrot',
        catergory:'tools',
-      price:'169',
       image:"assets/images/tools/5.webp",
       fakeprice:'199',
-      reviews:'',
-      off:'',
-      sale:''
+       price:'100',
+        like:'assets/images/red-icon.jpg',
+        details:{
+          description:[
+            'Quality of the growing medium decides the quality of the plants. Soil in the pots/containers should be well drained and aerated. It should still retain moisture.',
+            'Contents: Soil, Perlite, Vermiculite, Cocopeat, Vermicompost.'
+          ],
+          instruction:["Keep this product away from the reach of children below 3 years"],
+          benefits:['Environment friendly Excellent water holding capacityOrganicProvides best environment to the plants rootsNo harmful chemicalsCan be used to grow all type of plantsSpecially formulatedExcellent air porosity'],
+          use:[
+            'To fill pots/containers, vertical gardens, bio walls for growing Plants',
+            'To prepare raised beds for growing Plants',
+            'To repot plants',
+            'To amend existing soil in pots'
+          ],
+          notes:[
+            'This soil does not contain any specialized fertilizer like flowering or fruiting booste',
+            'Store this soil in cool & dry place.'
+          ]
+            },
+     
+        shippingCharges:'70',
+        dispatch:"7 days",
+        origin:"india",
+        dislike:'assets/images/dislike.jpg',
+   
+        description:'Plant Potting Mix Soil for Plants 10kg, Soil Less All Purpose Ready to use Potting Mix Made with vermicompost/Neem Cake/Potash',
+      
+     
+        detail:'It is double shaded Rose plant'
     },
  
 

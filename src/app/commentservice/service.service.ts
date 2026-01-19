@@ -36,27 +36,23 @@ export class ServiceService {
        this.updateTimeAgo();
   
   }
+comment(text: string): void {
+  if (!text.trim()) return;
 
-  comment(comments:string): void {
-          this.newComment = comments
-          console.log(this.newComment,'sdfg')
-    if (this.newComment) {
+  const newCommentObj = {
+    text,
+    createdAt: new Date().toISOString(),
+    name: 'T',
+    userName: 'Tanish'
+  };
 
-      const newCommentObj = {
-        text: this.newComment,
-        createdAt: new Date().toISOString(),
-        name: "T",
-      userName: "Tanish"
-      };
+  this.comments.push(newCommentObj);
+  localStorage.setItem('comments', JSON.stringify(this.comments));
 
-      this.comments.push(newCommentObj); 
-      localStorage.setItem('comments', JSON.stringify(this.comments));
-      this.newComment = ''; 
-    }
+  // 👇 IMPORTANT
+  this.updateTimeAgo();
+}
 
-    this.updateTimeAgo();
-  
-  }
 
   getListOfName(){
     return this.listOfNames

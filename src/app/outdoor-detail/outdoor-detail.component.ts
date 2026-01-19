@@ -33,7 +33,8 @@ export class OutdoorDetailComponent implements OnInit {
   outdoorId:any
 //  dataproduct:any[]=[]
  displayItem:any
- productDetail:any
+ productDetail:any;
+  wishlistItems: any[] = [];
  printvalue:any
  comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
  newComment: string = '';
@@ -60,10 +61,15 @@ export class OutdoorDetailComponent implements OnInit {
   
     }
 
-    addComment(): void {
-      this.comment.comment(this.newComment)
-        
-      }
+   addComment(): void {
+   
+  this.comment.comment(this.newComment)
+      
+  this.comments = [...this.comment.comments];
+  this.listOfNames = [...this.comment.getListOfName()];
+
+  this.newComment = '';
+  }
     getproducts(){
   
       if(this.displayItem && this.outdoorId){
@@ -73,7 +79,8 @@ export class OutdoorDetailComponent implements OnInit {
           console.log('product not found')
         }
         else{
-          console.log('product is found')
+          console.log('product is found');
+this.checkWishlistStatus(this.displayItem.id)
         }
      }
     }
@@ -123,7 +130,47 @@ export class OutdoorDetailComponent implements OnInit {
    }
   
   
+   checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
+  next: (data) =>{
+    console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item.id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
+  }
+})
+}
   
+removeitem(id){
+this.whitehidden=true;
+this.redhidden=false;
+console.log('sdfghjnk')
+
+    console.log(id);
+    
+  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
+  
+}
+
+
   wishItem(productId):void{
   console.log(productId,'sdfgh')
   this.whitehidden=false;

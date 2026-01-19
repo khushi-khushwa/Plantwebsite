@@ -22,18 +22,19 @@ cartitem:any;
   }
 
   removecart(id){
-     let cart = this.cartitem.filter(item => item.id !== id)
-     console.log(cart)
-     if(cart){
+    this.cartitem = this.cartitem.filter(item => item.id !== id)
+     console.log(this.cartitem)
+    //  if(cart){
       this.data.removeCartItem(id).subscribe({
         next : ()=>{
-          console.log('cart item is deleting', id)
+          console.log('cart item is deleting', id);
+          this.getitem()
         },
         error: (error)=>{
  console.log('error occur not item delete', id)
         }
        })
-     }
+    //  }
     
      
   };

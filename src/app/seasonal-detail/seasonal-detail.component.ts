@@ -33,6 +33,8 @@ export class SeasonalDetailComponent implements OnInit {
  productDetail:any
  listOfNames: string[] = [];
  printvalue:any
+ wishlistItems: any[] = [];
+
  selectedValue: number = 0;
     comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
     newComment: string = '';
@@ -56,9 +58,14 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
 
 }
 
-addComment(): void {
+ addComment(): void {
+   
   this.comment.comment(this.newComment)
-    
+      
+  this.comments = [...this.comment.comments];
+  this.listOfNames = [...this.comment.getListOfName()];
+
+  this.newComment = '';
   }
 getproducts(){
 
@@ -69,9 +76,12 @@ if(this.displayItem && this.seasonalId){
     console.log('product not found')
   }
   else{
-    console.log('product is found')
+    console.log('product is found');
+    this.checkWishlistStatus(this.displayItem.id);
   }
 }
+
+
 }
 
 addToCart(id:number):void{
@@ -109,13 +119,31 @@ next: (data) =>{
 }
 
 // wishlist----------------------------
-getWishItem():void{
-this.wishlist.wishlistItem().subscribe({
+// getWishItem():void{
+//   console.log("added")
+// this.wishlist.wishlistItem().subscribe({
+//   next: (data) =>{
+//     console.log('wishlist item', data);
+  
+
+// }
+// })
+// }
+
+checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
   next: (data) =>{
     console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item.id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
   }
 })
 }
+
+
 
 
 
@@ -133,7 +161,7 @@ next:()=>{
     horizontalPosition: 'right',
     panelClass: ['notif-success'],
   }); 
-  this.getWishItem()
+  // this.getWishItem()
 },
 error : (error)=>{
   console.log('not add in wishlist',error);
@@ -149,10 +177,31 @@ buyProduct(product:any){
 this.route.navigate(['/buyitem',product.id])
 };
 
-additem(){
+removeitem(id){
 this.whitehidden=true;
 this.redhidden=false;
 console.log('sdfghjnk')
+
+    console.log(id);
+    
+  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+    if (this.wishlist) {
+      this.wishlist.deleteWishlistItem(id).subscribe({
+        next: () => {
+          console.log("Item deleted successfully:", id);
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+        },
+        error: (err) => {
+          console.error("Error deleting item:", err);
+        }
+      });
+    }
+  
 }
 
   

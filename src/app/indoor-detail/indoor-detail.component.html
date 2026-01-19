@@ -155,7 +155,7 @@
       <div class="ps-lg-5 compost-detail">
         <!-- Wishlist Icons -->
         <img [src]="displayItem.dislike" class="white-img" *ngIf="whitehidden" (click)="wishItem(displayItem.id)">
-        <img [src]="displayItem.like" class="heart-img" *ngIf="redhidden" (click)="additem()">
+        <img [src]="displayItem.like" class="heart-img" *ngIf="redhidden" (click)="removeitem(displayItem.id)">
         
         <!-- Product Information -->
         <h5 class="mt-3 mb-2">{{ displayItem.name }}</h5>
