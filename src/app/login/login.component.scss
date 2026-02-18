@@ -1,10 +1,11 @@
 .form-container {
-    height: 80vh; 
+    height: 84vh; 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     position: relative;
+
+
 }
 
 .formrow {
@@ -55,13 +56,36 @@ button {
  align-items: center;
  justify-content: center;
  position: relative;
+
 }
 
 .logo{
     position:absolute;
-
        width: 30%;
    
-    
 }
+
+@media (max-width:991px){
+
+    .right-image{
+    display: none;
+
+}
+
+.clear-start{
+   
+    height: 702px;
+   
+}
+.formrow {
+    width: 100%; 
+    max-width: 600px; 
+    margin: auto;
+    
+
+}
+
+}
+
+
 
