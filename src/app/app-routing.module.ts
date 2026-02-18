@@ -43,7 +43,7 @@ const routes: Routes = [
   // {path:'',component:HomeComponent},
   {path:'', redirectTo:'/login', pathMatch:'full', },
   {path:'login', component:LoginComponent},
-  {path:'signup', component:SignupComponent, canActivate:[SignupGuard]  },
+  {path:'signup', component:SignupComponent  },
 
   {path:'home', component:HomeComponent, canActivate:[AuthGuard] 
   },

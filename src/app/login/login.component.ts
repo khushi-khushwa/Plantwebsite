@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
 
 
     signup(){
+      console.log("sdsf")
       this.router.navigate(['/signup'])
     }
   }

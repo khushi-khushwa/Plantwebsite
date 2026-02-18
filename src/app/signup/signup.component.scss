@@ -61,3 +61,76 @@
     background-color: green;
     border: none;
 }
+
+
+@media (max-width:1310px){
+    .formrow {
+    width: 36%;
+    z-index: 2; 
+}
+
+.girlimage {
+    left: calc(30% - 20rem); 
+}
+
+.boyimage {
+    right: calc(34% - 21rem);
+}
+}
+
+@media (max-width:1050px){
+    .formrow {
+    width: 40%;
+    z-index: 2; 
+}
+
+.girlimage {
+    left: calc(28% - 20rem); 
+}
+
+.boyimage {
+    right: calc(32% - 21rem);
+}
+}
+
+
+@media (max-width:768px){
+    .formrow {
+    width: 52%;
+    z-index: 2; 
+}
+
+.girlimage {
+    left: calc(28% - 20rem); 
+}
+
+.boyimage {
+    right: calc(32% - 21rem);
+}
+
+.girlimage img, .boyimage img {
+    height: 25rem;
+    width: auto;
+    max-width: 100%;
+}
+}
+
+
+@media (max-width:540px){
+    .formrow {
+    width: 80%;
+    z-index: 2; 
+}
+
+.girlimage {
+    left: calc(28% - 20rem); 
+}
+
+.boyimage {
+    right: calc(32% - 21rem);
+}
+
+.girlimage img, .boyimage img {
+display: none;
+}
+}
