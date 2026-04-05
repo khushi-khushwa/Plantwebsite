@@ -1,12 +1,13 @@
+
 <div class="container-fluid form-container">
     <div class="formrow">
         <!-- <div class="col-lg-12"> -->
-            <form #userName="ngForm" [formGroup]="serviceform" class="p-4 form-box"> 
+            <form #userName="ngForm" [formGroup]="serviceform" class="p-4 form-box">
                 <ng-container *ngFor="let servicedata of formData">
                     <div>
                         <div *ngIf="servicedata.type !== 'select'">
                             <label class="form-label">{{servicedata.name}}</label>
-                            <input [type]="servicedata.type" placeholder="{{servicedata.placeholder}}" 
+                            <input [type]="servicedata.type" placeholder="{{servicedata.placeholder}}"
                                    [formControlName]="servicedata.name" class="form-control"/>
                         </div>
                         <div *ngIf="servicedata.type == 'select'">
@@ -24,7 +25,7 @@
     </div>
 <!-- </div> -->
 
-<!-- 
+<!--
 FormControl: Define basic functionality of individual form control
 
 FormGroup: Used to aggregate the values of collection form control

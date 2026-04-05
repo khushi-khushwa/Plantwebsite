@@ -70,3 +70,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     <p>Price: {{ plant.price }}</p>
     <img *ngIf="plant.image" [src]="'http://localhost:4000'+ plant.image" alt="Plant Image">
   </div> -->
+
+  <!-- C:\Users\DURGESH\AppData\Local\Packages\Microsoft.Office.OneNote_8wekyb3d8bbwe\LocalState\AppData\Local\OneNote\16.0\Backup_UserInitiated -->
+  <!-- https://www.scribd.com/document/802506844/DWDM-all-in-one -->

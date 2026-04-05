@@ -39,21 +39,25 @@ export class SeasonalDetailComponent implements OnInit {
     comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
     newComment: string = '';
     stars: number[] = [1, 2, 3, 4, 5];
+    allSeasonal:any=[]
   ngOnInit(): void {
 
     
     this.commentForm = new FormGroup({
       comment: new FormControl('')
     })
-this.displayItem = this.seasonalItem.filterdata().filter(value =>{
-       return value.catergory === 'seasonal'
-})
-
-
-this.activeroute.paramMap.subscribe((param:ParamMap)=>{
+ this.seasonalItem.filterdata().subscribe((value:any[]) =>{
+       this.allSeasonal = value.filter(data=> data.category === 'seasonal')
+      
+       this.activeroute.paramMap.subscribe((param:ParamMap)=>{
   this.seasonalId=param.get('id');
+  console.log(this.seasonalId)
   this.getproducts()
 })
+})
+
+
+
 
 
 }
@@ -69,15 +73,15 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
   }
 getproducts(){
 
-if(this.displayItem && this.seasonalId){
-  this.displayItem = this.seasonalItem.filterdata().find(item => item.id == this.seasonalId);
+if(this.allSeasonal && this.seasonalId){
+  this.displayItem = this.allSeasonal.find(item => item._id.toString() === this.seasonalId);
   if(!this.displayItem){
     this.route.navigate(['/notfound'])
     console.log('product not found')
   }
   else{
     console.log('product is found');
-    this.checkWishlistStatus(this.displayItem.id);
+    this.checkWishlistStatus(this.displayItem._id);
   }
 }
 
@@ -85,9 +89,9 @@ if(this.displayItem && this.seasonalId){
 }
 
 addToCart(id:number):void{
-const selectedItem = this.seasonalItem.filterdata().find((item:any)=> item.id === id);
+const selectedItem = this.allSeasonal.find((item:any)=> item._id === id);
 if(selectedItem){
-  this.cart.addItem(selectedItem).subscribe({
+  this.cart.addItem("post/product",selectedItem).subscribe({
     next:()=>{
       this._snackbar.open(' Item ia added to cart ','close',{
         duration: 3000,
@@ -136,7 +140,7 @@ checkWishlistStatus(id){
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -151,9 +155,9 @@ wishItem(productId):void{
 console.log(productId,'sdfgh')
 this.whitehidden=false;
 this.redhidden=true;
-const whishProduct = this.seasonalItem.filterdata().find((item:any) => item.id == productId)
+const whishProduct = this.allSeasonal.find((item:any) => item._id == productId)
 if(whishProduct){
-this.wishlist.addWishlistItem(whishProduct).subscribe({
+this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
 next:()=>{
   this._snackbar.open('Item is added to wishlist','close',{
     duration: 3000,
@@ -174,7 +178,7 @@ onsubmit(){
 this.printvalue=this.commentForm.get('comment')?.value;
 };
 buyProduct(product:any){
-this.route.navigate(['/buyitem',product.id])
+this.route.navigate(['/buyitem',product._id])
 };
 
 removeitem(id){
@@ -186,7 +190,7 @@ console.log('sdfghjnk')
     
   //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);
            this._snackbar.open('Item is deleted to wishlist','close',{

@@ -11,14 +11,18 @@ export class ToolsComponent implements OnInit {
   constructor( private service:ApplyservicesService, private router:Router) { }
 
   ngOnInit(): void {
-      this.tools = this.service.filterdata().filter(value=>{
-       return value.catergory === "tools"
+     this.service.filterdata().subscribe((data:any[])=>{
+      
+        this.tools =data.filter(value=>{
+
+          return value.category === "tools"
+        })
         
       })
   }
   onbuy(p){
     console.log(p);
-    this.router.navigate(['/tools-detail', p.id])
+    this.router.navigate(['/tools-detail', p._id])
   }
 
 

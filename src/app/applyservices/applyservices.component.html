@@ -15,13 +15,19 @@
           <div class="service-info">
             <div class="service-number">{{i + 1}}</div>
             <div class="service-details">
-                <div class="service-head">
+                <!-- <div class="service-head"> -->
 
-                    <h5 class="service-title">{{data.title}}</h5>
-                    <span class="price-tag">{{data.charges}}</span>
-                </div>
+                  
+                
+                      <h4 class="service-title">{{data.title}}</h4>
+                      <div class="service-head">
+                            <span class="price-tag mx-2">{{data.charges}}</span><span (click)="cancel(data._id)"><i class="fa-solid fa-trash"></i></span>
+                      </div>
+                <!-- </div> -->
               <p class="service-description" *ngIf="data.description">{{data.description}}</p>
             </div>
+      
+        
           </div>
           <!-- <div class="service-price">
             <span class="price-tag">{{data.charges}}</span>

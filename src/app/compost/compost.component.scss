@@ -35,12 +35,18 @@
       }
     }
     .give-height{
-         height:auto
+         height:auto;
+          
     }
     .scroll{
-        overflow: hidden;
-        overflow-y: scroll;
-        height: 100vh;
+       overflow: visible;
+  height: auto;
+    }
+    .filter-sidebar {
+
+  position: fixed ;
+  top: 12rem; 
+   width:20rem;
     }
     .outdoor-detail {
       position: relative;

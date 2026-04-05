@@ -12,7 +12,7 @@ import { CurrentitemService } from '../services/currentitem.service';
 export class SeedsComponent implements OnInit {
   plants: any[] = [];
   constructor(private seeds:ApplyservicesService, private route:Router, private http:HttpClient, private cursrent:CurrentitemService) { }
-   getSeeds:any[]=[];
+   getSeeds:any=[];
 
    plantData = {
     name: '',
@@ -21,11 +21,14 @@ export class SeedsComponent implements OnInit {
     price: '',
   };
   selectedImage: File | null = null;
-
+isfilteropen:boolean=false;
   ngOnInit(): void {
     
-    this.getSeeds = this.seeds.filterdata().filter(value =>{
-      return value.catergory === 'seeds'
+     this.seeds.filterdata().subscribe((data:any[]) =>{
+           this.getSeeds=data.filter(value =>{
+
+           return value.category === 'seeds'
+          })
 })
 
 this.cursrent.getPlants().subscribe(data => {
@@ -37,7 +40,7 @@ this.cursrent.getPlants().subscribe(data => {
   onbuy(product){
     console.log(product)
 
-      this.route.navigate(['/seeds-detail', product.id])
+      this.route.navigate(['/seeds-detail', product._id])
 
   
     

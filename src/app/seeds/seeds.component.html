@@ -7,7 +7,7 @@
     </div>
     
     <div class="row row-gap-4">
-      <div class="col-lg-3 give-height">
+      <div class="col-lg-3  give-height d-none d-lg-block">
         <div class="filter-sidebar">
           <h3>Categories</h3>
           <ul>
@@ -18,13 +18,13 @@
               <li><a >Tools</a></li>
           </ul>
           <hr>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda mollitia voluptatem dicta adipisci sunt animi aspernatur accusantium neque! Tempora molestias placeat alias deserunt aut nam mollitia non similique quasi illo.</p>
+          <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda mollitia voluptatem dicta adipisci sunt animi aspernatur accusantium neque! Tempora molestias placeat alias deserunt aut nam mollitia non similique quasi illo.</p> -->
         </div>
       </div>
       
       <div class="col-lg-9 scroll">
         <div class="row row-gap-4">
-          <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let products of getSeeds">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3" *ngFor="let products of getSeeds">
             <div class="p-4 outdoor-detail" (click)="onbuy(products)">
             
               <span class="badge-new" *ngIf="products.isNew">New</span>

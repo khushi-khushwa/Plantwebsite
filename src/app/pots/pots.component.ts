@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplyservicesService } from '../services/applyservices.service';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-pots',
   templateUrl: './pots.component.html',
@@ -9,11 +10,13 @@ import { Router } from '@angular/router';
 export class PotsComponent implements OnInit {
 
   constructor(private pots:ApplyservicesService, private route:Router) { }
-  allpots:any[] = [];
+  allpots:any = [];
 
     ngOnInit(): void {
-      this.allpots = this.pots.filterdata().filter(value =>{
-           return value.catergory === 'pots'
+       this.pots.filterdata().subscribe((value:any[]) =>{
+                this.allpots = value.filter(data =>{
+                   return data.category === 'pots'
+                })
       });
   
   
@@ -23,7 +26,7 @@ export class PotsComponent implements OnInit {
     onbuy(product){
       console.log(product)
   
-        this.route.navigate(['/pots-detail', product.id])
+        this.route.navigate(['/pots-detail', product._id])
     }
 
 }

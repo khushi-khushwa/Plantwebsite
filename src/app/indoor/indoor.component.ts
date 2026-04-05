@@ -11,18 +11,23 @@ export class IndoorComponent implements OnInit {
 
   constructor(private indoorproducts:ApplyservicesService, private route:Router ) { }
 
-  indoor:any[] = [];
+  indoor:any = [];
 getIndoorPlants:any={};
   ngOnInit(): void {
-    this.indoor = this.indoorproducts.filterdata().filter(value =>{
-      return value.catergory === 'indoor'
-      });
+  
+
+        this.indoorproducts.filterdata().subscribe((data:any[]) =>{
+
+      this.indoor= data.filter(value=>{
+       return value.category == "indoor"
+      })
+     })
   }
 
   onbuy(product){
     console.log(product)
 
-      this.route.navigate(['/indoor-detail', product.id])
+      this.route.navigate(['/indoor-detail', product._id])
 
      
     

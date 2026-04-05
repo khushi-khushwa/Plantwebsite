@@ -10,10 +10,12 @@ export class OutdoorComponent implements OnInit {
 
   constructor(private outdoorProducts:ApplyservicesService, private route:Router) { }
 
-outdoor:any[]=[];
+outdoor:any=[];
   ngOnInit(): void {
-    this.outdoor = this.outdoorProducts.filterdata().filter(value =>{
-    return value.catergory === 'indoor'
+    this.outdoorProducts.filterdata().subscribe((value:any[]) =>{
+               this.outdoor = value.filter(data =>{
+                return  data.category == "outdoor"
+               })
     });
 
    
@@ -22,7 +24,7 @@ outdoor:any[]=[];
   onbuy(product){
     console.log(product)
 
-      this.route.navigate(['/outdoor-detail', product.id])
+      this.route.navigate(['/outdoor-detail', product._id])
 
      
     

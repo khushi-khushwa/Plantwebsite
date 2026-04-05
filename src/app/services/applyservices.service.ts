@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class ApplyservicesService {
 
     
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
+  alldata=`${environment.apiUrl}/api/plants/get`
+  signup=`${environment.apiUrl}/api/useraccount`
      data =  [
         {
           id:'1',
@@ -3251,7 +3254,7 @@ outdoor:[
     id:"indoor-1",
     name:'Peace Lily, Spathiphyllum-plant',
     price:'169',
-    catergory:'indoor',
+    category:'indoor',
     image:"assets/images/indoor/5.png",
     detail:{
       description:['Peace Lily Plant is a very popular and very rare indoor flowering houseplant. It is also an excellent air purifier plant.'],
@@ -3273,7 +3276,7 @@ outdoor:[
 },
 {
   id:"indoor-2",
-  catergory:'indoor',
+  category:'indoor',
   name:'Elephant bush',
   image:"assets/images/indoor/3.png",
   price:'169',
@@ -3313,7 +3316,7 @@ outdoor:[
 },
 {
   id:"indoor-3",
-  catergory:'indoor',
+  category:'indoor',
   name:'snack plant, air purifier and oxygrn enriching plant pack',
   image:"assets/images/indoor/4.png",
 
@@ -3366,7 +3369,7 @@ outdoor:[
 // },
 {
   id:"indoor-5",
-  catergory:'indoor',
+  category:'indoor',
   name:'Money plant, Scindapsus',
   image:"assets/images/indoor/6.png",
   price:'169',
@@ -3406,7 +3409,7 @@ outdoor:[
 },
 {
   id:"indoor-6",
-  catergory:'indoor',
+  category:'indoor',
   name:'Money plant marbel prince',
   image:"assets/images/indoor/7.png",
   price:'169',
@@ -3446,7 +3449,7 @@ outdoor:[
 },
 {
   id:"indoor-7",
-  catergory:'indoor',
+  category:'indoor',
   name:'Areca Plam- plant',
   image:"assets/images/indoor/8.png",
   price:'169',
@@ -3486,7 +3489,7 @@ outdoor:[
 },
 {
   id:"indoor-8",
-  catergory:'indoor',
+  category:'indoor',
   name:'Ficus Lyrata Bambino',
   image:"assets/images/indoor/9.png",
   price:'169',
@@ -3526,7 +3529,7 @@ outdoor:[
 },
 {
   id:"indoor-9",
-  catergory:'indoor',
+  category:'indoor',
   name:'syngonium Green - Plant',
   image:"assets/images/indoor/10.png",
   price:'169',
@@ -3566,7 +3569,7 @@ outdoor:[
 },
 {
   id:"indoor-10",
-  catergory:'indoor',
+  category:'indoor',
   name:'Boston Fern, Nephrolepis exaltata bosteniensis',
   image:"assets/images/indoor/11.png",
   price:'169',
@@ -3606,7 +3609,7 @@ outdoor:[
 },
 {
   id:"indoor-11",
-  catergory:'indoor',
+  category:'indoor',
   name:'Monestera obliqua',
   image:"assets/images/indoor/12.png",
   price:'169',
@@ -3646,7 +3649,7 @@ outdoor:[
 },
 {
   id:"indoor-12",
-  catergory:'indoor',
+  category:'indoor',
   name:'Peperomia Magnoliifolia, Succulent Plant',
   image:"assets/images/indoor/13.png",
   price:'169',
@@ -3687,7 +3690,7 @@ outdoor:[
 {
   id:"indoor-13",
   name:'jade plant',
-  catergory:'indoor',
+  category:'indoor',
   image:"assets/images/indoor/15.png",
   price:'169',
   fakeprice:'199',
@@ -3723,7 +3726,7 @@ outdoor:[
 },
 {
   id:"indoor-14",
-  catergory:'indoor',
+  category:'indoor',
   name:'Christmas Cactus',
   image:"assets/images/indoor/anthurium.png",
   price:'169',
@@ -3760,7 +3763,7 @@ outdoor:[
 },
 {
   id:"indoor-15",
-  catergory:'indoor',
+  category:'indoor',
   name:'Crassula ovata, Jade Plant - Succulent Plant',
   image:"assets/images/indoor/17.png",
   price:'169',
@@ -3800,7 +3803,7 @@ outdoor:[
 },
 {
   id:"indoor-16",
-  catergory:'indoor',
+  category:'indoor',
   name:'Syngonium Cream allusion, Syngonium Cream (Pink veins) - Plant',
   image:"assets/images/indoor/arecapalm.png",
   price:'169',
@@ -3840,7 +3843,7 @@ outdoor:[
 },
 {
   id:"indoor-17",
-  catergory:'indoor',
+  category:'indoor',
   name:'Snake Plant, Sansevieria trifasciata Golden Hahnii - Succulent Plant',
   image:"assets/images/indoor/19.png",
   price:'169',
@@ -3880,7 +3883,7 @@ outdoor:[
 },
 {
   id:"indoor-18",
-  catergory:'indoor',
+  category:'indoor',
   name:'Poinsettia, Christmas Flower (Red) - Plant',
   image:"assets/images/indoor/christmas-cactus.png",
   price:'169',
@@ -3920,7 +3923,7 @@ outdoor:[
 },
 {
   id:"indoor-19",
-  catergory:'indoor',
+  category:'indoor',
   name:'Anthurium (Red) - PlantAlocasia Hybrid - Plant',
   image:"assets/images/indoor/21.png",
   price:'169',
@@ -3960,7 +3963,7 @@ outdoor:[
 },
 {
   id:"indoor-20",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron xanadu Green - Plant',
   image:"assets/images/indoor/22.png",
   price:'169',
@@ -4000,7 +4003,7 @@ outdoor:[
 },
 {
   id:"indoor-21",
-  catergory:'indoor',
+  category:'indoor',
   name:'Haworthia truncata Green Rose - Succulent Plant',
   image:"assets/images/indoor/23.png",
   price:'169',
@@ -4041,7 +4044,7 @@ outdoor:[
 {
   id:"indoor-22",
 
-  catergory:'indoor',
+  category:'indoor',
   name:'Beautiful Table Top / Office Desk SucculentsAglaonema Jubilee Petite - Plant',
   image:"assets/images/indoor/24.png",
   price:'169',
@@ -4081,7 +4084,7 @@ outdoor:[
 },
 {
   id:"indoor-23",
-  catergory:'indoor',
+  category:'indoor',
   name:'Haworthia attenuata - Succulent Plant',
   image:"assets/images/indoor/25.png",
   price:'169',
@@ -4121,7 +4124,7 @@ outdoor:[
 },
 {
   id:"indoor-24",
-  catergory:'indoor',
+  category:'indoor',
   name:'Calathea ornata pinstripe, Calathea ornata (Pink stripes) - Plant',
   image:"assets/images/indoor/26.png",
   price:'169',
@@ -4161,7 +4164,7 @@ outdoor:[
 },
 {
   id:"indoor-25",
-  catergory:'indoor',
+  category:'indoor',
   name:'Aglaonema Tiara, Aglaonema Pink Panther - Plant',
   image:"assets/images/indoor/27.png",
   price:'169',
@@ -4201,7 +4204,7 @@ outdoor:[
 },
 {
   id:"indoor-26",
-  catergory:'indoor',
+  category:'indoor',
   name:'Aglaonema Commutatum Malay Beauty - Plant',
   image:"assets/images/indoor/28.png",
   price:'169',
@@ -4241,7 +4244,7 @@ outdoor:[
 },
 {
   id:"indoor-27",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/29.png",
   price:'169',
@@ -4294,7 +4297,7 @@ outdoor:[
 // },
 {
   id:"indoor-29",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/money-plant.png",
   price:'169',
@@ -4334,7 +4337,7 @@ outdoor:[
 },
 {
   id:"indoor-30",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/money_plant.png",
   price:'169',
@@ -4374,7 +4377,7 @@ outdoor:[
 },
 {
   id:"indoor-31",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/pieacelili.png",
   price:'169',
@@ -4414,7 +4417,7 @@ outdoor:[
 },
 {
   id:"indoor-32",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/salmonium.png",
   price:'169',
@@ -4454,7 +4457,7 @@ outdoor:[
 },
 {
   id:"indoor-33",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/snack.png",
   price:'169',
@@ -4494,7 +4497,7 @@ outdoor:[
 },
 {
   id:"indoor-34",
-  catergory:'indoor',
+  category:'indoor',
   name:'Philodendron, Selloum - Plant',
   image:"assets/images/indoor/tablebrush.png",
   price:'169',
@@ -4535,7 +4538,7 @@ outdoor:[
 /// ---------------outdoor--------------------------
      {
       id:"outdoor-1",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/bougainvilla.jpg",
@@ -4572,7 +4575,7 @@ outdoor:[
      },
      {
       id:"outdoor-2",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"Banana",
       height:"2 feet",
       image:"assets/images/outdoor/banana.jpg",
@@ -4609,7 +4612,7 @@ outdoor:[
      },
      {
       id:"outdoor-3",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"double-flower chandni",
       height:"2 feet",
       image:"assets/images/outdoor/chnadni.jpg",
@@ -4646,7 +4649,7 @@ outdoor:[
      },
      {
       id:"outdoor-4",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/chmpa.jpg",
@@ -4683,7 +4686,7 @@ outdoor:[
      },
      {
       id:"outdoor-5",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/chameli.jpg",
@@ -4720,7 +4723,7 @@ outdoor:[
      },
      {
       id:"outdoor-6",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/chrishtna.jpg",
@@ -4757,7 +4760,7 @@ outdoor:[
      },
      {
       id:"outdoor-7",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/desi-gudhel.jpg",
@@ -4794,7 +4797,7 @@ outdoor:[
      },
      {
       id:"outdoor-8",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/doubleshade-rose.jpg",
@@ -4831,7 +4834,7 @@ outdoor:[
      },
      {
       id:"outdoor-9",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/golden hadge.jpg",
@@ -4868,7 +4871,7 @@ outdoor:[
      },
      {
       id:"outdoor-10",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/green-ficus.jpg",
@@ -4905,7 +4908,7 @@ outdoor:[
      },
      {
       id:"outdoor-11",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/green-junipress.jpg",
@@ -4942,7 +4945,7 @@ outdoor:[
      },
      {
       id:"outdoor-12",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/guchabougainvailla.jpg",
@@ -4979,7 +4982,7 @@ outdoor:[
      },
      {
       id:"outdoor-13",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/kadam.jpg",
@@ -5016,7 +5019,7 @@ outdoor:[
      },
      {
       id:"outdoor-14",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/kashmiri-rose.jpg",
@@ -5053,7 +5056,7 @@ outdoor:[
      },
      {
       id:"outdoor-15",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/lavebdra-white.jpg",
@@ -5090,7 +5093,7 @@ outdoor:[
      },
      {
       id:"outdoor-16",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/motiya-jasmin.jpg",
@@ -5127,7 +5130,7 @@ outdoor:[
      },
      {
       id:"outdoor-17",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/muriya.jpg",
@@ -5164,7 +5167,7 @@ outdoor:[
      },
      {
       id:"outdoor-18",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/narangi.jpg",
@@ -5201,7 +5204,7 @@ outdoor:[
      },
      {
       id:"outdoor-19",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/panda.jpg",
@@ -5238,7 +5241,7 @@ outdoor:[
      },
      {
       id:"outdoor-20",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/piple.jpg",
@@ -5275,7 +5278,7 @@ outdoor:[
      },
      {
       id:"outdoor-21",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/red-hadge.jpg",
@@ -5312,7 +5315,7 @@ outdoor:[
      },
      {
       id:"outdoor-22",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/red-lily.jpg",
@@ -5349,7 +5352,7 @@ outdoor:[
      },
      {
       id:"outdoor-23",
-      catergory:'outdoor',
+      category:'outdoor',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/images/outdoor/red-rose.jpg",
@@ -5386,7 +5389,7 @@ outdoor:[
      },
       {
         id:"outdoor-24",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/regular-bougainvilla.jpg",
@@ -5423,7 +5426,7 @@ outdoor:[
        },
        {
         id:"outdoor-25",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/round-morpankhi.jpg",
@@ -5460,7 +5463,7 @@ outdoor:[
        },
        {
         id:"outdoor-26",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/sejpg.jpg",
@@ -5497,7 +5500,7 @@ outdoor:[
        },
        {
         id:"outdoor-27",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/shtut.jpg",
@@ -5534,7 +5537,7 @@ outdoor:[
        },
        {
         id:"outdoor-28",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/small-junipress.jpg",
@@ -5571,7 +5574,7 @@ outdoor:[
        },
        {
         id:"outdoor-29",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/spider.jpg",
@@ -5608,7 +5611,7 @@ outdoor:[
        },
        {
         id:"outdoor-30",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/tablebrush.jpg",
@@ -5645,7 +5648,7 @@ outdoor:[
        },
        {
         id:"outdoor-31",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/variety-morphankhi.jpg",
@@ -5682,7 +5685,7 @@ outdoor:[
        },
        {
         id:"outdoor-32",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/white-ficus.jpg",
@@ -5719,7 +5722,7 @@ outdoor:[
        },
        {
         id:"outdoor-33",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/images/outdoor/yellow-bougainvilla.jpg",
@@ -5756,7 +5759,7 @@ outdoor:[
        },
        {
         id:"outdoor-34",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5793,7 +5796,7 @@ outdoor:[
        },
        {
         id:"outdoor-35",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5831,7 +5834,7 @@ outdoor:[
   
        {
         id:"outdoor-36",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5868,7 +5871,7 @@ outdoor:[
        },
        {
         id:"outdoor-37",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5905,7 +5908,7 @@ outdoor:[
        },
         {
         id:"outdoor-38",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5942,7 +5945,7 @@ outdoor:[
        },
        {
         id:"outdoor-39",
-        catergory:'outdoor',
+        category:'outdoor',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -5980,7 +5983,7 @@ outdoor:[
        //////--------------- flower------------
        {
         id:"flowerplant-1",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -5991,7 +5994,7 @@ outdoor:[
       },
       {
         id:"flowerplant-2",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6002,7 +6005,7 @@ outdoor:[
       },
       {
         id:"flowerplant-3",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6013,7 +6016,7 @@ outdoor:[
       },
       {
         id:"flowerplant-4",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:"",
@@ -6024,7 +6027,7 @@ outdoor:[
       },
       {
         id:"flowerplant-5",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6035,7 +6038,7 @@ outdoor:[
       },
       {
         id:"flowerplant-6",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6046,7 +6049,7 @@ outdoor:[
       },
       {
         id:"flowerplant-7",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:"",
@@ -6057,7 +6060,7 @@ outdoor:[
       },
       {
         id:"flowerplant-8",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6068,7 +6071,7 @@ outdoor:[
       },
       {
         id:"flowerplant-9",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6079,7 +6082,7 @@ outdoor:[
       },
       {
         id:"flowerplant-10",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6090,7 +6093,7 @@ outdoor:[
       },
       {
         id:"flowerplant-11",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6101,7 +6104,7 @@ outdoor:[
       },
       {
         id:"flowerplant-12",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6112,7 +6115,7 @@ outdoor:[
       },
       {
         id:"flowerplant-13",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6123,7 +6126,7 @@ outdoor:[
       },
       {
         id:"flowerplant-14",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6134,7 +6137,7 @@ outdoor:[
       },
       {
         id:"flowerplant-15",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:"",
@@ -6145,7 +6148,7 @@ outdoor:[
       },
       {
         id:"flowerplant-16",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:'',
@@ -6156,7 +6159,7 @@ outdoor:[
       },
       {
         id:"flowerplant-17",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:"",
@@ -6167,7 +6170,7 @@ outdoor:[
       },
       {
         id:"flowerplant-18",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         Image:'',
@@ -6178,7 +6181,7 @@ outdoor:[
       },
       {
         id:"flowerplant-19",
-        catergory:'flower',
+        category:'flower',
         name:'Philodendron, Selloum - Plant',
         price:'169',
         image:"",
@@ -6192,7 +6195,7 @@ outdoor:[
       {
         id:"seed-1",
         name:'carrot',
-        catergory:'seeds',
+        category:'seeds',
         price:'169',
         image:"assets/images/seeds/alyssum.jpg",
         fakeprice:'199',
@@ -6229,7 +6232,7 @@ outdoor:[
       },
       {
         id:"seed-2",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/balsam.jpg",
@@ -6268,7 +6271,7 @@ outdoor:[
       },
       {
         id:"seed-3",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/brinjal.jpg",
@@ -6307,7 +6310,7 @@ outdoor:[
       },
       {
         id:"seed-4",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/california-poppy.jpg",
@@ -6346,7 +6349,7 @@ outdoor:[
       },
       {
         id:"seed-5",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/carrot.jpg",
@@ -6385,7 +6388,7 @@ outdoor:[
       },
       {
         id:"seed-6",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/cherry-tomato.jpg",
@@ -6424,7 +6427,7 @@ outdoor:[
       },
       {
         id:"seed-7",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/chia.jpg",
@@ -6463,7 +6466,7 @@ outdoor:[
       },
       {
         id:"seed-8",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/chia-seeds.jpg",
@@ -6502,7 +6505,7 @@ outdoor:[
       },
       {
         id:"seed-9",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/corn.jpg",
@@ -6541,7 +6544,7 @@ outdoor:[
       },
       {
         id:"seed-10",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/cosmos.jpg",
@@ -6580,7 +6583,7 @@ outdoor:[
       },
       {
         id:"seed-11",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/drumstick.jpg",
@@ -6619,7 +6622,7 @@ outdoor:[
       },
       {
         id:"seed-12",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/gaillardia.jpg",
@@ -6658,7 +6661,7 @@ outdoor:[
       },
       {
         id:"seed-13",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/green-chili.jpg",
@@ -6697,7 +6700,7 @@ outdoor:[
       },
       {
         id:"seed-14",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/heirloom.jpg",
@@ -6736,7 +6739,7 @@ outdoor:[
       },
       {
         id:"seed-15",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/hollyhock.jpg",
@@ -6774,7 +6777,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-16",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/karela.jpg",
@@ -6812,7 +6815,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-17",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/kochia.jpg",
@@ -6850,7 +6853,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-18",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/larkspurmix.jpg",
@@ -6889,7 +6892,7 @@ outdoor:[
       },
       {
         id:"seed-19",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/lecttus.jpg",
@@ -6927,7 +6930,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-20",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/lupins.jpg",
@@ -6965,7 +6968,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-21",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/methi.jpg",
@@ -7003,7 +7006,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-22",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/mint.jpg",
@@ -7041,7 +7044,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-23",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/mix-seeds.jpg",
@@ -7079,7 +7082,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-24",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/musturd.jpg",
@@ -7117,7 +7120,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-25",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/muttur.jpg",
@@ -7155,7 +7158,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-26",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/red-poppy.jpg",
@@ -7193,7 +7196,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-27",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/soya.jpg",
@@ -7231,7 +7234,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-28",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/stick.jpg",
@@ -7269,7 +7272,7 @@ outdoor:[
         sale:''
       }, {
         id:"seed-29",
-        catergory:'seeds',
+        category:'seeds',
         name:'carrot',
         price:'169',
         image:"assets/images/seeds/sulgum.jpg",
@@ -7311,7 +7314,7 @@ outdoor:[
       // ---------------------------compost ----------------------------------
       {
         id:"compost-1",
-        catergory:'compost',
+        category:'compost',
         name:'Bone Meal (abitec)',
         price:'169',
         image:"assets/images/compost/abitec-bornmeal.jpg",
@@ -7344,7 +7347,7 @@ outdoor:[
       },
       {
         id:"compost-2",
-        catergory:'compost',
+        category:'compost',
         name:'Bone Meal',
         price:'169',
         image:"assets/images/compost/bone-meal.jpg",
@@ -7378,7 +7381,7 @@ outdoor:[
       },
       {
         id:"compost-3",
-        catergory:'compost',
+        category:'compost',
         name:'Cocopeat powder',
         price:'169',
         image:"assets/images/compost/coco-powder.jpg",
@@ -7395,7 +7398,7 @@ outdoor:[
       },
       {
         id:"compost-4",
-        catergory:'compost',
+        category:'compost',
         name:'Potting Soil Mix',
         price:'169',
         image:"assets/images/compost/soil-mix.jpeg",
@@ -7431,7 +7434,7 @@ outdoor:[
       },
       {
         id:"compost-5",
-        catergory:'compost',
+        category:'compost',
         name:'Organic Compost',
         price:'500',
         image:"assets/images/compost/images.jpeg",
@@ -7453,7 +7456,7 @@ outdoor:[
       },
       {
         id:"compost-6",
-        catergory:'compost',
+        category:'compost',
         name:'Vermi-compost',
         price:'400',
         image:"assets/images/compost/vermicompost.jpeg",
@@ -7492,7 +7495,7 @@ outdoor:[
       },
       {
         id:"compost-7",
-        catergory:'compost',
+        category:'compost',
         name:'Seeds-Booster',
         price:'130',
         image:"assets/images/compost/seeds-booster.jpg",
@@ -7518,7 +7521,7 @@ outdoor:[
       },
       {
         id:"compost-8",
-        catergory:'compost',
+        category:'compost',
         name:'Neemkhali',
         price:'169',
         image:"assets/images/compost/neemkhali.jpg",
@@ -7541,7 +7544,7 @@ outdoor:[
   
       {
         id:"compost-9",
-        catergory:'compost',
+        category:'compost',
         name:'Plant Growth tonic',
         price:'200',
         image:"assets/images/compost/plantgrwoth-tonic.jpg",
@@ -7590,7 +7593,7 @@ outdoor:[
 
       {
         id:"fiberpot-1",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         reviews:'',
         off:'',
@@ -7633,7 +7636,7 @@ outdoor:[
       },
       {
         id:"fiberpot-2",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7673,7 +7676,7 @@ outdoor:[
       },
       {
         id:"fiberpot-3",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7713,7 +7716,7 @@ outdoor:[
       },
       {
         id:"fiberpot-4",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7753,7 +7756,7 @@ outdoor:[
       },
       {
         id:"fiberpot-5",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7793,7 +7796,7 @@ outdoor:[
       },
       {
         id:"fiberpot-6",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7833,7 +7836,7 @@ outdoor:[
       },
       {
         id:"fiberpot-7",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7874,7 +7877,7 @@ outdoor:[
   
       {
         id:"fiberpot-9",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7914,7 +7917,7 @@ outdoor:[
       },
       {
         id:"fiberpot-10",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7955,7 +7958,7 @@ outdoor:[
      
       {
         id:"fiberpot-12",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -7995,7 +7998,7 @@ outdoor:[
       },
       {
         id:"fiberpot-13",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -8035,7 +8038,7 @@ outdoor:[
       },
       {
         id:"fiberpot-14",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -8075,7 +8078,7 @@ outdoor:[
    
       {
         id:"mudpot-1",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8115,7 +8118,7 @@ outdoor:[
       },
       {
         id:"mudpot-2",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8155,7 +8158,7 @@ outdoor:[
       },
       {
         id:"mudpot-3",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8195,7 +8198,7 @@ outdoor:[
       },
       {
         id:"mudpot-4",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8235,7 +8238,7 @@ outdoor:[
       },
       {
         id:"mudpot-5",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8275,7 +8278,7 @@ outdoor:[
       },
       {
         id:"mudpot-6",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8315,7 +8318,7 @@ outdoor:[
       },
       {
         id:"mudpot-7",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8355,7 +8358,7 @@ outdoor:[
       },
       {
         id:"mudpot-8",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8395,7 +8398,7 @@ outdoor:[
       },
       {
         id:"mudpot-9",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8435,7 +8438,7 @@ outdoor:[
       },
       {
         id:"mudpot-10",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8475,7 +8478,7 @@ outdoor:[
       },
       {
         id:"mudpot-11",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8515,7 +8518,7 @@ outdoor:[
       },
       {
         id:"mudpot-12",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8555,7 +8558,7 @@ outdoor:[
       },
       {
         id:"mudpot-13",
-        catergory:'pots',
+        category:'pots',
         type:"mud pots",
         name:'carrot',
         price:'169',
@@ -8595,7 +8598,7 @@ outdoor:[
       },
       {
         id:"plasticpot-1",
-        catergory:'pots',
+        category:'pots',
         type:"plastic pots",
         name:'carrot',
         price:'169',
@@ -8635,7 +8638,7 @@ outdoor:[
       },
       {
         id:"plasticpot-2",
-        catergory:'pots',
+        category:'pots',
         type:"plastic pots",
         name:'carrot',
         price:'169',
@@ -8675,7 +8678,7 @@ outdoor:[
       },
       {
         id:"plasticpot-3",
-        catergory:'pots',
+        category:'pots',
         type:"plastic pots",
         name:'carrot',
         price:'169',
@@ -8715,7 +8718,7 @@ outdoor:[
       },
       {
         id:"plasticpot-4",
-        catergory:'pots',
+        category:'pots',
         type:"plastic pots",
         name:'carrot',
         price:'169',
@@ -8756,7 +8759,7 @@ outdoor:[
     
       {
         id:"cermicpot-7",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8797,7 +8800,7 @@ outdoor:[
     
       {
         id:"cermicpot-9",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8837,7 +8840,7 @@ outdoor:[
       },
       {
         id:"cermicpot-10",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8877,7 +8880,7 @@ outdoor:[
       },
       {
         id:"cermicpot-11",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8917,7 +8920,7 @@ outdoor:[
       },
       {
         id:"cermicpot-12",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8957,7 +8960,7 @@ outdoor:[
       },
       {
         id:"cermicpot-13",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -8997,7 +9000,7 @@ outdoor:[
       },
       {
         id:"cermicpot-14",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9037,7 +9040,7 @@ outdoor:[
       },
       {
         id:"cermicpot-15",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9077,7 +9080,7 @@ outdoor:[
       },
       {
         id:"cermicpot-16",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9117,7 +9120,7 @@ outdoor:[
       },
       {
         id:"cermicpot-17",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9157,7 +9160,7 @@ outdoor:[
       },
       {
         id:"cermicpot-18",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9170,7 +9173,7 @@ outdoor:[
       },
       {
         id:"cermicpot-19",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9210,7 +9213,7 @@ outdoor:[
       },
       {
         id:"cermicpot-20",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9250,7 +9253,7 @@ outdoor:[
       },
       {
         id:"cermicpot-21",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9290,7 +9293,7 @@ outdoor:[
       },
       {
         id:"cermicpot-22",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9329,7 +9332,7 @@ outdoor:[
         sale:''
       },  {
         id:"cermicpot-8",
-        catergory:'pots',
+        category:'pots',
         type:"cermicpot pots",
         name:'carrot',
         price:'169',
@@ -9369,7 +9372,7 @@ outdoor:[
       },
       {
         id:"fiberpot-15",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -9409,7 +9412,7 @@ outdoor:[
       },
       {
         id:"fiberpot-11",
-        catergory:'pots',
+        category:'pots',
         type:"fiber pots",
         name:'carrot',
         price:'169',
@@ -9452,7 +9455,7 @@ outdoor:[
         
     {
       id:"tool-1",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/3.jpg",
@@ -9491,7 +9494,7 @@ outdoor:[
     },
     {
       id:"tool-2",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/4.jpg",
@@ -9529,7 +9532,7 @@ outdoor:[
     },
     {
       id:"tool-3",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/6.jpg",
@@ -9567,7 +9570,7 @@ outdoor:[
     },
     {
       id:"tool-4",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/8.jpg",
@@ -9605,7 +9608,7 @@ outdoor:[
     },
     {
       id:"tool-5",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/10.jpg",
@@ -9643,7 +9646,7 @@ outdoor:[
     },
     {
       id:"tool-6",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/7.jpg",
@@ -9681,7 +9684,7 @@ outdoor:[
     },
     {
       id:"tool-7",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/8.jpg",
@@ -9719,7 +9722,7 @@ outdoor:[
     },
     {
       id:"tool-8",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/picAxe4.webp",
@@ -9757,7 +9760,7 @@ outdoor:[
     },
     {
       id:"tool-9",
-      catergory:'tools',
+      category:'tools',
 
       name:'carrot',
       price:'169',
@@ -9796,7 +9799,7 @@ outdoor:[
     },
     {
       id:"tool-10",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/9.jpg",
@@ -9834,7 +9837,7 @@ outdoor:[
     },
     {
       id:"tool-11",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/9.webp",
@@ -9872,7 +9875,7 @@ outdoor:[
     },
     {
       id:"tool-12",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/3.jpg",
@@ -9910,7 +9913,7 @@ outdoor:[
     },
     {
       id:"tool-13",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/4.webp",
@@ -9948,7 +9951,7 @@ outdoor:[
     },
     {
       id:"tool-14",
-      catergory:'tools',
+      category:'tools',
       name:'carrot',
       price:'169',
       image:"assets/images/tools/5.webp",
@@ -9986,7 +9989,7 @@ outdoor:[
     },
     {
       id:"seasonal-1",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/1.png",
@@ -10023,7 +10026,7 @@ outdoor:[
      },
      {
       id:"seasonal-2", 
-        catergory:'seasonal',
+        category:'seasonal',
 
       name:"Banana",
       height:"2 feet",
@@ -10061,7 +10064,7 @@ outdoor:[
      },
      {
       id:"seasonal-3",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"double-flower chandni",
       height:"2 feet",
       image:"assets/seasonal/4.png",
@@ -10098,7 +10101,7 @@ outdoor:[
      },
      {
       id:"seasonal-4",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/5.png",
@@ -10135,7 +10138,7 @@ outdoor:[
      },
      {
       id:"seasonal-5",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/6.png",
@@ -10172,7 +10175,7 @@ outdoor:[
      },
      {
       id:"seasonal-6",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/10.png",
@@ -10209,7 +10212,7 @@ outdoor:[
      },
      {
       id:"seasonal-7",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/12.png",
@@ -10246,7 +10249,7 @@ outdoor:[
      },
      {
       id:"seasonal-8",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/14.png",
@@ -10283,7 +10286,7 @@ outdoor:[
      },
      {
       id:"seasonal-9",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/15.png",
@@ -10320,7 +10323,7 @@ outdoor:[
      },
      {
       id:"seasonal-10",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/16.png",
@@ -10357,7 +10360,7 @@ outdoor:[
      },
      {
       id:"seasonal-11",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/17.png",
@@ -10394,7 +10397,7 @@ outdoor:[
      },
      {
       id:"seasonal-12",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/18.png",
@@ -10431,7 +10434,7 @@ outdoor:[
      },
      {
       id:"seasonal-13",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/19.png",
@@ -10468,7 +10471,7 @@ outdoor:[
      },
      {
       id:"seasonal-14",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/20.png",
@@ -10505,7 +10508,7 @@ outdoor:[
      },
      {
       id:"seasonal-15",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/21.png",
@@ -10542,7 +10545,7 @@ outdoor:[
      },
      {
       id:"seasonal-16",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/22.png",
@@ -10579,7 +10582,7 @@ outdoor:[
      },
      {
       id:"seasonal-17",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/23.png",
@@ -10616,7 +10619,7 @@ outdoor:[
      },
      {
       id:"seasonal-18",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/24.png",
@@ -10653,7 +10656,7 @@ outdoor:[
      },
      {
       id:"seasonal-19",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/25.png",
@@ -10690,7 +10693,7 @@ outdoor:[
      },
      {
       id:"seasonal-20",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/26.png",
@@ -10727,7 +10730,7 @@ outdoor:[
      },
      {
       id:"seasonal-21",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/27.png",
@@ -10764,7 +10767,7 @@ outdoor:[
      },
      {
       id:"seasonal-22",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/28.png",
@@ -10801,7 +10804,7 @@ outdoor:[
      },
      {
       id:"seasonal-23",
-      catergory:'seasonal',
+      category:'seasonal',
       name:"bougainvailla",
       height:"2 feet",
       image:"assets/seasonal/29.png",
@@ -10838,7 +10841,7 @@ outdoor:[
      },
       {
         id:"seasonal-24",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/30.png",
@@ -10875,7 +10878,7 @@ outdoor:[
        },
        {
         id:"seasonal-25",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/31.png",
@@ -10912,7 +10915,7 @@ outdoor:[
        },
        {
         id:"seasonal-26",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/32.png",
@@ -10950,7 +10953,7 @@ outdoor:[
        },
        {
         id:"seasonal-27",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/34.png",
@@ -10987,7 +10990,7 @@ outdoor:[
        },
        {
         id:"seasonal-28",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/desi-gudel.png",
@@ -11024,7 +11027,7 @@ outdoor:[
        },
        {
         id:"seasonal-29",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/muriya.png",
@@ -11061,7 +11064,7 @@ outdoor:[
        },
        {
         id:"seasonal-30",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/kadam.png",
@@ -11098,7 +11101,7 @@ outdoor:[
        },
        {
         id:"seasonal-31",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/kashmiri-rose.png",
@@ -11135,7 +11138,7 @@ outdoor:[
        },
        {
         id:"seasonal-32",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/lavebdra-white.png",
@@ -11172,7 +11175,7 @@ outdoor:[
        },
        {
         id:"seasonal-33",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         image:"assets/seasonal/red-lily.png",
@@ -11209,7 +11212,7 @@ outdoor:[
        },
        {
         id:"seasonal-34",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11246,7 +11249,7 @@ outdoor:[
        },
        {
         id:"seasonal-35",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11284,7 +11287,7 @@ outdoor:[
   
        {
         id:"seasonal-36",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11321,7 +11324,7 @@ outdoor:[
        },
        {
         id:"seasonal-37",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11358,7 +11361,7 @@ outdoor:[
        },
         {
         id:"seasonal-38", 
-          catergory:'seasonal',
+          category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11395,7 +11398,7 @@ outdoor:[
        },
        {
         id:"seasonal-39",
-        catergory:'seasonal',
+        category:'seasonal',
         name:"bougainvailla",
         height:"2 feet",
         like:'assets/images/red-icon.jpg',
@@ -11432,7 +11435,7 @@ outdoor:[
        },
        {
          id:"seasonal-40",
-         catergory:'seasonal',
+         category:'seasonal',
          name:"bougainvailla",
          height:"2 feet",
          like:'assets/images/red-icon.jpg',
@@ -11473,7 +11476,7 @@ outdoor:[
          {
       id:"tool-1",
       name:'carrot',
-      catergory:'tools',
+      category:'tools',
       price:'169',
       image:"assets/images/tools/3.jpg",
         
@@ -11511,7 +11514,7 @@ outdoor:[
       id:"tool-2",
       name:'carrot',
 
-       catergory:'tools',
+       category:'tools',
       image:"assets/images/tools/4.jpg",
       fakeprice:'199',
         price:'100',
@@ -11548,7 +11551,7 @@ outdoor:[
     {
       id:"tool-3",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
       
       image:"assets/images/tools/6.jpg",
       fakeprice:'199',
@@ -11586,7 +11589,7 @@ outdoor:[
     {
       id:"tool-4",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
     
       image:"assets/images/tools/8.jpg",
       fakeprice:'199',
@@ -11624,7 +11627,7 @@ outdoor:[
     {
       id:"tool-5",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
  
       image:"assets/images/tools/10.jpg",
       fakeprice:'199',
@@ -11662,7 +11665,7 @@ outdoor:[
     {
       id:"tool-6",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
 
       image:"assets/images/tools/7.jpg",
       fakeprice:'199',
@@ -11700,7 +11703,7 @@ outdoor:[
     {
       id:"tool-7",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
    
       image:"assets/images/tools/8.jpg",
       fakeprice:'199',
@@ -11738,7 +11741,7 @@ outdoor:[
     {
       id:"tool-8",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
   
       image:"assets/images/tools/picAxe4.webp",
       fakeprice:'199',
@@ -11776,7 +11779,7 @@ outdoor:[
     {
       id:"tool-9",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
 
       image:"assets/images/tools/7.webp",
       fakeprice:'199',
@@ -11814,7 +11817,7 @@ outdoor:[
     {
       id:"tool-10",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
 
       image:"assets/images/tools/9.jpg",
       fakeprice:'199',
@@ -11852,7 +11855,7 @@ outdoor:[
     {
       id:"tool-11",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
       
       image:"assets/images/tools/9.webp",
       fakeprice:'199',
@@ -11890,7 +11893,7 @@ outdoor:[
     {
       id:"tool-12",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
 
       image:"assets/images/tools/3.jpg",
       fakeprice:'199',
@@ -11928,7 +11931,7 @@ outdoor:[
     {
       id:"tool-13",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
 
       image:"assets/images/tools/4.webp",
       fakeprice:'199',
@@ -11966,7 +11969,7 @@ outdoor:[
     {
       id:"tool-14",
       name:'carrot',
-       catergory:'tools',
+       category:'tools',
       image:"assets/images/tools/5.webp",
       fakeprice:'199',
        price:'100',
@@ -12005,13 +12008,27 @@ outdoor:[
  ]
 
 
-    getallproducts(){
-      return this.allProductData
-    }
+    // getallproducts(){
+    //   return this.allProductData
+    // }
+
+    // filterdata(){
+    //   return this.dataoffilter
+    // }
 
     filterdata(){
-      return this.dataoffilter
+      return this.http.get(this.alldata)
     }
 
+
+
+       createAccount(data:any): Observable<any>{
+      return  this.http.post(`${this.signup}/register`,data)
+       }
+
+       loginUser(data:any):Observable<any>{
+       return  this.http.post(`${this.signup}/login`, data)
+       }
+       
 };
 

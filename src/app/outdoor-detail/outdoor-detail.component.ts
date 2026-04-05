@@ -33,6 +33,7 @@ export class OutdoorDetailComponent implements OnInit {
   outdoorId:any
 //  dataproduct:any[]=[]
  displayItem:any
+   allOutdoor: any = [];
  productDetail:any;
   wishlistItems: any[] = [];
  printvalue:any
@@ -48,17 +49,18 @@ export class OutdoorDetailComponent implements OnInit {
             comment: new FormControl('')
           })
 
-      this.displayItem = this.outdoorItem.filterdata().filter(value =>{
-        return value.catergory == 'indoor'
-      })
-      console.log(this.displayItem)
-  
+
+       this.outdoorItem.filterdata().subscribe((value:any[]) =>{
+             
+        this.allOutdoor =  value.filter(data => data.category === "outdoor")
+            console.log(this.allOutdoor)
       this.activeroute.paramMap.subscribe((param:ParamMap)=>{
         this.outdoorId=param.get('id');
         this.getproducts()
       })
+       })
       
-  
+
     }
 
    addComment(): void {
@@ -72,23 +74,24 @@ export class OutdoorDetailComponent implements OnInit {
   }
     getproducts(){
   
-      if(this.displayItem && this.outdoorId){
-        this.displayItem = this.outdoorItem.filterdata().find(item => item.id == this.outdoorId);
+      if(this.outdoorId && this.allOutdoor){
+        this.displayItem = this.allOutdoor.find((item:any) => item._id.toString() === this.outdoorId);
+           console.log(this.displayItem)
         if(!this.displayItem){
           this.route.navigate(['/notfound'])
           console.log('product not found')
         }
         else{
           console.log('product is found');
-this.checkWishlistStatus(this.displayItem.id)
+this.checkWishlistStatus(this.displayItem._id)
         }
      }
     }
   
     addToCart(id:number):void{
-      const selectedItem =this.outdoorItem.filterdata().find((item:any)=> item.id === id);
+      const selectedItem =this.allOutdoor.find((item:any)=> item._id === id);
       if(selectedItem){
-        this.cart.addItem(selectedItem).subscribe({
+        this.cart.addItem("post/product",selectedItem).subscribe({
           next:()=>{
             this._snackbar.open(' Item ia added to cart ','close',{
               duration: 3000,
@@ -136,7 +139,7 @@ this.checkWishlistStatus(this.displayItem.id)
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -152,7 +155,7 @@ console.log('sdfghjnk')
     
   //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);
            this._snackbar.open('Item is deleted to wishlist','close',{
@@ -175,9 +178,9 @@ console.log('sdfghjnk')
   console.log(productId,'sdfgh')
   this.whitehidden=false;
   this.redhidden=true;
-  const whishProduct = this.outdoorItem.filterdata().find((item:any) => item.id == productId)
+  const whishProduct = this.allOutdoor.find((item:any) => item._id == productId)
   if(whishProduct){
-    this.wishlist.addWishlistItem(whishProduct).subscribe({
+    this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
       next:()=>{
         this._snackbar.open('Item is added to wishlist','close',{
           duration: 3000,
@@ -198,7 +201,7 @@ console.log('sdfghjnk')
     this.printvalue=this.commentForm.get('comment')?.value;
   };
   buyProduct(product:any){
-    this.route.navigate(['/buyitem',product.id])
+    this.route.navigate(['/buyitem',product._id])
   };
   
   additem(){

@@ -44,6 +44,7 @@ export class IndoorDetailComponent implements OnInit {
  displayItem:any
  productDetail:any
  printvalue:any
+  allindoor: any = [];
  disables:boolean = false
  comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
  newComment: string = '';
@@ -65,15 +66,18 @@ export class IndoorDetailComponent implements OnInit {
     this.comments = this.comment.comments;
     this.listOfNames =this.comment.getListOfName()
 
-      this.displayItem = this.indoorItem.filterdata().filter(value =>{
-      return value.catergory === 'indoor'
-      });
-  
-    this.activeroute.paramMap.subscribe((param:ParamMap)=>{
+      this.indoorItem.filterdata().subscribe((data:any[]) =>{
+         this.allindoor = data.filter(item => item.category === "indoor")
+         console.log(this.allindoor)
+
+      this.activeroute.paramMap.subscribe((param:ParamMap)=>{
       this.indoorId = param.get('id');
-      console.log(this.indoorId, this.displayItem)
+      console.log(this.indoorId)
       this.getproducts()
     });
+        });
+  
+   
     
   this.loadVideos()
 
@@ -113,25 +117,26 @@ export class IndoorDetailComponent implements OnInit {
    }
 
   getproducts(){
-
-    if(this.displayItem && this.indoorId){
-      this.displayItem = this.indoorItem.filterdata().find(item => item.id == this.indoorId);
+     console.log(this.allindoor)
+    if(this.indoorId && this.allindoor){
+      this.displayItem = this.allindoor.find((item:any) => item._id.toString() === this.indoorId);
+      console.log(this.displayItem)
       if(!this.displayItem){
         this.route.navigate(['/notfound'])
         console.log('product not found')
       }
       else{
         console.log('product is found');
- this.checkWishlistStatus(this.displayItem.id)
+ this.checkWishlistStatus(this.displayItem._id)
       }
    }
   }
 
   addToCart(id:number):void{
     console.log(id)
-    const selectedItem =this.indoorItem.filterdata().find((item:any)=> item.id == id);
+    const selectedItem =this.allindoor.find((item:any)=> item.id == id);
     if(selectedItem){
-      this.cart.addItem(selectedItem).subscribe({
+      this.cart.addItem("post/product",selectedItem).subscribe({
         next:()=>{
           this._snackbar.open(' Item ia added to cart ','close',{
             duration: 3000,
@@ -172,7 +177,7 @@ console.log('sdfghjnk')
     
   //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);
            this._snackbar.open('Item is deleted to wishlist','close',{
@@ -208,7 +213,7 @@ console.log('sdfghjnk')
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -219,9 +224,9 @@ wishItem(productId):void{
 console.log(productId,'sdfgh')
 this.whitehidden=false;
 this.redhidden=true;
-const whishProduct = this.indoorItem.filterdata().find((item:any) => item.id == productId)
+const whishProduct = this.allindoor.find((item:any) => item._id == productId)
 if(whishProduct){
-  this.wishlist.addWishlistItem(whishProduct).subscribe({
+  this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
     next:()=>{
       this._snackbar.open('Item is added to wishlist','close',{
         duration: 3000,
@@ -242,7 +247,7 @@ onsubmit(){
   this.printvalue=this.commentForm.get('comment')?.value;
 };
 buyProduct(product:any){
-  this.route.navigate(['/buyitem',product.id])
+  this.route.navigate(['/buyitem',product._id])
 };
 
 

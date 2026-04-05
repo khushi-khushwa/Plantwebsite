@@ -28,6 +28,7 @@ export class ToolsDetailsComponent implements OnInit {
         private wishlist:WishlistService
         ) { }
       
+        
         cartitem:any
         listOfNames: string[] = [];
         whitehidden:boolean=true;
@@ -41,6 +42,7 @@ export class ToolsDetailsComponent implements OnInit {
        selectedValue: number = 0;
       comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
       newComment: string = '';
+      alltools:any=[]
       stars: number[] = [1, 2, 3, 4, 5];
         ngOnInit(): void {
       
@@ -52,14 +54,14 @@ export class ToolsDetailsComponent implements OnInit {
                   comment: new FormControl('')
                 })
   
-            this.displayItem = this.toolsitems.filterdata().filter(value =>{
-              return value.catergory === 'tools'
+            this.toolsitems.filterdata().subscribe((value:any[]) =>{
+             this.alltools = value.filter(item => item.category === "tools")
+             this.activeroute.paramMap.subscribe((param:ParamMap)=>{
+               this.toolId=param.get('id');
+               this.getproducts()
+             })
         })
         
-            this.activeroute.paramMap.subscribe((param:ParamMap)=>{
-              this.toolId=param.get('id');
-              this.getproducts()
-            })
             
         
           }
@@ -75,8 +77,8 @@ export class ToolsDetailsComponent implements OnInit {
   }
   
           getproducts(){
-            if(this.displayItem && this.toolId){
-              this.displayItem = this.toolsitems.filterdata().find(item => item.id == this.toolId);
+            if(this.alltools && this.toolId){
+              this.displayItem = this.alltools.find(item => item._id.toString() ===  this.toolId);
               console.log(this.displayItem)
               if(!this.displayItem){
                 this.route.navigate(['/notfound'])
@@ -91,9 +93,9 @@ export class ToolsDetailsComponent implements OnInit {
         
           // 
           addToCart(id:number):void{
-            const selectedItem = this.toolsitems.filterdata().find((item:any)=> item.id === id);
+            const selectedItem = this.alltools.find((item:any)=> item._id === id);
             if(selectedItem){
-              this.cart.addItem(selectedItem).subscribe({
+              this.cart.addItem("post/product",selectedItem).subscribe({
                 next:()=>{
                   this._snackbar.open(' Item ia added to cart ','close',{
                     duration: 3000,
@@ -141,25 +143,27 @@ export class ToolsDetailsComponent implements OnInit {
       console.log('wishlist item', data);
       this.wishlistItems  = data
   
-        const isWishlisted  = data.some( item => item.id  == id )
+        const isWishlisted  = data.some( item => item._id  == id )
         console.log(isWishlisted)
-         this.redhidden = isWishlisted;
+        this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
        
     }
   })
   }
   
   removeitem(id){
- 
+ this.whitehidden=true;
+this.redhidden=false;
   console.log('sdfghjnk')
   
       console.log(id);
       
     //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
       if (this.wishlist) {
-        this.wishlist.deleteWishlistItem(id).subscribe({
+        this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
           next: () => {
-              this.redhidden = false;
+       
             console.log("Item deleted successfully:", id);
              this._snackbar.open('Item is deleted to wishlist','close',{
               duration: 3000,
@@ -178,12 +182,13 @@ export class ToolsDetailsComponent implements OnInit {
   
         wishItem(productId):void{
         console.log(productId,'sdfgh')
-   
-        const whishProduct = this.toolsitems.filterdata().find((item:any) => item.id == productId)
+     this.whitehidden = false;
+    this.redhidden = true;
+        const whishProduct = this.alltools.find((item:any) => item._id === productId)
         if(whishProduct){
-          this.wishlist.addWishlistItem(whishProduct).subscribe({
+          this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
             next:()=>{
-                this.redhidden = true;
+             
               this._snackbar.open('Item is added to wishlist','close',{
                 duration: 3000,
                 verticalPosition: 'top',
@@ -203,7 +208,7 @@ export class ToolsDetailsComponent implements OnInit {
           this.printvalue=this.commentForm.get('comment')?.value;
         };
         buyProduct(product:any){
-          this.route.navigate(['/buyitem',product.id])
+          this.route.navigate(['/buyitem',product._id])
         };
         
        

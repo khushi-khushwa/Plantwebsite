@@ -1,17 +1,17 @@
-<div class="checkout-container">
+ <div class="checkout-container"> 
   <div class="row">
-    <!-- Order Summary Section -->
+  <!-- Order Summary Section  -->
     <div class="col-lg-4">
       <div class="order-summary">
-        <div *ngIf="deliveryitem" class="card">
+        <div *ngIf="deliverdata" class="card">
           <div class="card-header">
             <h3>Order Summary</h3>
           </div>
           <div class="card-body">
             <div class="product-details">
-              <img [src]="deliveryitem.image" class="product-image" alt="Product image" />
+              <img [src]="deliverdata.image" class="product-image" alt="Product image" />
               <div class="product-info">
-                <h4>{{ deliveryitem.name }}</h4>
+                <h4>{{ deliverdata.name }}</h4>
                 
                 <div class="quantity-control">
                   <span>Quantity:</span>
@@ -29,7 +29,7 @@
             <div class="price-details">
               <div class="price-row">
                 <span>Price</span>
-                <span>{{ deliveryitem.price }}</span>
+                <span>{{ deliverdata.price }}</span>
               </div>
               <div class="price-row">
                 <span>Delivery Fee</span>
@@ -47,107 +47,167 @@
     </div>
     
     <!-- Checkout Form Section -->
-    <div class="col-lg-8">
-      <div class="checkout-form-container">
-        <form [formGroup]="orderDetail">
-          <mat-horizontal-stepper [linear]="isLinear" class="checkout-stepper">
-            <mat-step *ngFor="let data of buyData; let k = index" 
-                    [stepControl]="orderDetail.get(data.formGroupname)" 
-                    label="{{ data.formGroupname }}">
-              
-              <div class="step-content">
-                <ng-container [formGroupName]="data.formGroupname">
-                  <div *ngIf="data.formControl.length > 0" class="form-fields">
-                    <div *ngFor="let controls of data.formControl; let i = index" class="field-wrapper">
-                      <!-- Standard input fields -->
-                      <div *ngIf="controls.type !== 'radio'" class="input-field">
-                        <mat-form-field appearance="outline">
-                          <mat-label>{{ controls.placeholder }}</mat-label>
-                          <input matInput [type]="controls.type"
-                                [formControlName]="controls.name" />
-                          <mat-error *ngIf="orderDetail.get(data.formGroupname)?.get(controls.name)?.invalid">
-                            This field is required
-                          </mat-error>
-                        </mat-form-field>
-                      </div>
-                      
-                      <!-- Radio button fields -->
-                      <div *ngIf="controls.type == 'radio'" class="radio-field">
-                        <div class="payment-option">
-                          <label class="radio-container">
-                            <input [type]="controls.type" 
-                                  [formControlName]="controls.name" 
-                                  name="payment"
-                                  value="{{ controls.name }}" 
-                                  (click)="inputOpen(controls.name)" />
-                            <span class="radio-label">{{ controls.name }}</span>
-                            <span class="checkmark"></span>
-                          </label>
-                          
-                          <!-- Additional options for payment methods -->
-                          <div *ngIf="controls.moreoption == 'add'" class="payment-details">
-                            <div [formGroupName]="controls.name">
-                              <div *ngIf="controls.detail?.length > 0" class="payment-method-details" 
-                                  [ngClass]="{'active': controls.name === 'NetBanking' ? netOption : carditem}">
-                                
-                                <!-- Sub-options for banking -->
-                                <div *ngFor="let detail of controls.detail; let g=index">
-                                  <div *ngIf="detail.type == 'radio' && netOption" class="bank-option">
-                                    <label class="radio-container">
-                                      <input [type]="detail.type"
-                                            value="{{ detail.name }}"
-                                            name="paymentmethod" />
-                                      <span class="radio-label">{{ detail.name }}</span>
-                                      <span class="checkmark"></span>
-                                    </label>
-                                  </div>
-                                  
-                                  <!-- Card details inputs -->
-                                  <div *ngIf="detail.type !== 'radio' && carditem" class="card-field">
-                                    <mat-form-field appearance="outline">
-                                      <mat-label>{{ detail.name }}</mat-label>
-                                      <input matInput [type]="detail.type" />
-                                    </mat-form-field>
-                                  </div>
-                                </div>
-                              </div>
+   <div class="col-lg-8">
+  <div class="checkout-form-container">
+    <form [formGroup]="orderDetail">
+      <mat-horizontal-stepper [linear]="isLinear" class="checkout-stepper">
+
+        <mat-step
+          *ngFor="let data of buyData; let k = index"
+          [stepControl]="orderDetail.get(data.formGroupname)"
+          label="{{ data.formGroupname }}">
+
+          <div class="step-content">
+            <ng-container [formGroupName]="data.formGroupname">
+
+              <div *ngIf="data.formControl.length > 0" class="form-fields">
+                <div *ngFor="let controls of data.formControl; let i = index" class="field-wrapper">
+
+                  <!--  text / email / number inputs -->
+                  <div *ngIf="controls.type !== 'radio'" class="input-field">
+                    <mat-form-field appearance="outline">
+                      <mat-label>{{ controls.placeholder }}</mat-label>
+                      <input matInput
+                             [type]="controls.type"
+                             [formControlName]="controls.name" />
+                      <mat-error
+                        *ngIf="orderDetail.get(data.formGroupname)?.get(controls.name)?.invalid">
+                        This field is required
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+
+                  <!-- ── Payment radio group ── -->
+                  <div *ngIf="controls.type === 'radio'" class="radio-field">
+                    <div class="payment-option">
+
+                      <ng-container *ngFor="let d of controls.option">
+
+                       
+                        <label class="radio-container">
+                          <input
+                            type="radio"
+                            formControlName="paymentMethod"
+                            [value]="d.method"
+                            (click)="inputOpen(d.name)" />
+                          <span class="radio-label">{{ d.name }}</span>
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <!-- ── Expandable detail panels ── -->
+                        <div *ngIf="d.moreoption === 'add'" class="payment-details">
+
+                          <!-- Credit / Debit card fields -->
+                          <div
+                            *ngIf="d.name === 'Credit/Debit' && carditem"
+                            formGroupName="Credit/Debit"
+                            class="payment-method-details active">
+                                <ng-container *ngFor="let nestedvalue of d.detail">
+                 <mat-form-field appearance="outline">
+                              <mat-label>{{nestedvalue.method}}</mat-label>
+                              <input matInput type="text" formControlName="cardNumber" />
+                            </mat-form-field>
+                                </ng-container>
+                           
+                          </div>
+
+                          <!-- Net Banking bank list -->
+                          <div
+                            *ngIf="d.name === 'NetBanking' && netOption"
+                            formGroupName="NetBanking"
+                            class="payment-method-details active">
+
+                            <div *ngFor="let detail of d.detail" class="bank-option">
+                              <label class="radio-container">
+                              
+                                <input
+                                  type="radio"
+                                  formControlName="selectedBank"
+                                  [value]="detail.name" />
+                                <span class="radio-label">{{ detail.name }}</span>
+                                <span class="checkmark"></span>
+                              </label>
                             </div>
                           </div>
+
                         </div>
-                      </div>
+                        <!-- /moreoption -->
+
+                      </ng-container>
                     </div>
                   </div>
-                </ng-container>
-                
-                <!-- Step navigation buttons -->
-                <div class="step-actions">
-                  <button *ngIf="k > 0" 
-                          mat-button 
-                          matStepperPrevious 
-                          class="btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Previous
-                  </button>
-                  
-                  <button *ngIf="k < 2" 
-                          mat-button 
-                          matStepperNext 
-                          class="btn-primary"
-                          [disabled]="!orderDetail.get(data.formGroupname).valid">
-                    Next <i class="fas fa-arrow-right"></i>
-                  </button>
-                  
-                  <button *ngIf="k == 2" 
-                          mat-button 
-                          class="btn-success"
-                          (click)="orderConfirm()">
-                    Complete Order <i class="fas fa-check"></i>
-                  </button>
+                  <!-- /radio -->
+
                 </div>
               </div>
-            </mat-step>
-          </mat-horizontal-stepper>
-        </form>
-      </div>
-    </div>
+            </ng-container>
+
+            <!-- ── Step navigation ── -->
+            <div class="step-actions">
+              <button *ngIf="k > 0"
+                      mat-button matStepperPrevious class="btn-secondary">
+                <i class="fas fa-arrow-left"></i> Previous
+              </button>
+
+              <button *ngIf="k < 2"
+                      mat-button matStepperNext class="btn-primary"
+                      [disabled]="!orderDetail.get(data.formGroupname)?.valid">
+                Next <i class="fas fa-arrow-right"></i>
+              </button>
+
+              <button *ngIf="k === 2"
+                      mat-button class="btn-success"
+                      (click)="orderConfirm()">
+                Complete Order <i class="fas fa-check"></i>
+              </button>
+            </div>
+
+          </div>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+    </form>
   </div>
 </div>
+ </div>
+ </div>
+ 
+
+
+
+ <!-- this.buyData.forEach(section => {
+    const group = this.fb.group({});
+  
+    section.formControl.forEach(control => {
+      if(control.name === 'email'){
+        group.addControl(control.name, new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]))
+         }else{
+          group.addControl(control.name, new FormControl('', control.required ? Validators.required : []));
+         }
+ -->
+<!--          
+       if(control.name === 'Credit/Debit'){
+       this.card= control.name
+       } else if (control.name === 'netbanking' ){
+        this.netbanking = control.name
+       }
+             
+          if (!control.detail) {
+            group.addControl(control.name, new FormControl('', Validators.required));
+          
+          } else {
+            const creditCardGroup = this.fb.group({});
+            control.detail.forEach(detailControl => {
+              console.log(detailControl);
+              creditCardGroup.addControl(
+                detailControl.name,
+                new FormControl('', detailControl.required ? Validators.required : [])
+              );
+            });
+            group.addControl(control.name, creditCardGroup);
+          }
+        });
+        this.orderDetail.addControl(section.formGroupname, group);
+     
+
+      }) -->  -->

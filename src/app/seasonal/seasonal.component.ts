@@ -15,8 +15,11 @@ export class SeasonalComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.allSeasonal = this.seasonal.filterdata().filter(value =>{
-      return value.catergory === 'seasonal'
+     
+     this.seasonal.filterdata().subscribe((value:any[]) =>{
+         this.allSeasonal = value.filter(data=>{
+      return data.category === "seasonal"
+      })
 })
 
     
@@ -25,7 +28,7 @@ export class SeasonalComponent implements OnInit {
     this.getallseasonal.toggleLike(product)
   }
   onBuy(products: any){
-    this.route.navigate(['/seasonal-detail', products.id])
+    this.route.navigate(['/seasonal-detail', products._id])
   }
   }
 

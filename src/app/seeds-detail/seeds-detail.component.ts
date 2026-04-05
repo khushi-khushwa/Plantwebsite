@@ -33,6 +33,7 @@ export class SeedsDetailComponent implements OnInit {
      printvalue:any;
       wishlistItems: any[] = [];
      selectedValue: number = 0;
+     allseeds:any=[]
     comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
     newComment: string = '';
     stars: number[] = [1, 2, 3, 4, 5];
@@ -46,14 +47,17 @@ export class SeedsDetailComponent implements OnInit {
                 comment: new FormControl('')
               })
 
-          this.displayItem = this.seedItem.filterdata().filter(value =>{
-            return value.catergory === 'seeds'
-      })
-      
-          this.activeroute.paramMap.subscribe((param:ParamMap)=>{
+          this.seedItem.filterdata().subscribe((data:any[]) =>{
+                   this.allseeds =  data.filter(value => value.category === 'seeds')
+
+                  
+                     this.activeroute.paramMap.subscribe((param:ParamMap)=>{
             this.seedId=param.get('id');
             this.getproducts()
           })
+      })
+      
+        
           
       
         }
@@ -69,8 +73,8 @@ export class SeedsDetailComponent implements OnInit {
   }
 
         getproducts(){
-          if(this.displayItem && this.seedId){
-            this.displayItem = this.seedItem.filterdata().find(item => item.id == this.seedId);
+          if(this.allseeds && this.seedId){
+            this.displayItem = this.allseeds.find(item => item._id.toString() === this.seedId);
             console.log(this.displayItem)
             if(!this.displayItem){
               this.route.navigate(['/notfound'])
@@ -85,9 +89,9 @@ export class SeedsDetailComponent implements OnInit {
       
         // 
         addToCart(id:number):void{
-          const selectedItem = this.seedItem.filterdata().find((item:any)=> item.id === id);
+          const selectedItem = this.allseeds.find((item:any)=> item._id === id);
           if(selectedItem){
-            this.cart.addItem(selectedItem).subscribe({
+            this.cart.addItem("post/product",selectedItem).subscribe({
               next:()=>{
                 this._snackbar.open(' Item ia added to cart ','close',{
                   duration: 3000,
@@ -135,7 +139,7 @@ export class SeedsDetailComponent implements OnInit {
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -151,7 +155,7 @@ console.log('sdfghjnk')
     
   //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);
            this._snackbar.open('Item is deleted to wishlist','close',{
@@ -173,9 +177,9 @@ console.log('sdfghjnk')
       console.log(productId,'sdfgh')
       this.whitehidden=false;
       this.redhidden=true;
-      const whishProduct = this.seedItem.filterdata().find((item:any) => item.id == productId)
+      const whishProduct = this.allseeds.find((item:any) => item._id == productId)
       if(whishProduct){
-        this.wishlist.addWishlistItem(whishProduct).subscribe({
+        this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
           next:()=>{
             this._snackbar.open('Item is added to wishlist','close',{
               duration: 3000,
@@ -196,7 +200,7 @@ console.log('sdfghjnk')
         this.printvalue=this.commentForm.get('comment')?.value;
       };
       buyProduct(product:any){
-        this.route.navigate(['/buyitem',product.id])
+        this.route.navigate(['/buyitem',product._id])
       };
       
       additem(){

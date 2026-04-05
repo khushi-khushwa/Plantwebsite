@@ -13,15 +13,30 @@ export class ApplyservicesComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.applyservice.servicesShow().subscribe({
+this.getService()
+
+  }
+
+  cancel(id:any){
+    this.applyservice.deleteService(id).subscribe({
+      next:(v)=>{
+console.log(v)
+this.getService()
+      }
+
+    })
+  }
+
+  getService(){
+      this.applyservice.servicesShow().subscribe({
      next: (value)=>{
       this.order =value
       console.log(this.order)
      }
     });
    
+  }
+  }
 
-  }
-  }
 
 

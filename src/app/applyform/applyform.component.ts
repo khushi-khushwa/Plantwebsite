@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CurrentitemService } from '../services/currentitem.service';
 import { ApplyservicesService } from '../services/applyservices.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-applyform',
   templateUrl: './applyform.component.html',
@@ -12,12 +12,13 @@ export class ApplyformComponent implements OnInit {
   serviceform: FormGroup;
   titlevalue:any;
   servicedata:any;
-
+ sendData:any
 
   constructor(
     private fb: FormBuilder,
     private applyservice: CurrentitemService,
-    private dataofapply: ApplyservicesService
+    private dataofapply: ApplyservicesService,
+    private router:Router
   ) {}
 
 
@@ -92,21 +93,30 @@ export class ApplyformComponent implements OnInit {
     const optionvalue = this.serviceform.get('selectservice')?.value;
 const selectedService = optionvalue.toLowerCase();
           const chooseservice = this.dataofapply.data; 
-
-    this.servicedata = chooseservice.find(title  =>  title.title.toLocaleLowerCase() === selectedService)
+                 console.log(chooseservice)
+    const servicedata = chooseservice.find(title  =>  title.title.toLocaleLowerCase() === selectedService)
+     console.log(servicedata)
+    if (servicedata) {
     
-    if (this.servicedata) {
-      // const value = {
-      //   ...this.serviceform.value,
-      //   ...this.servicedata,
-      // };
-
-      this.servicedata['userdata']= this.serviceform.value;
+  //       this.sendData['title']=servicedata.title
+  //       this.sendData['description']=servicedata.description
+  //       this.sendData['charges']=servicedata.charges
+        
+  // console.log(this.sendData)
+  //     this.sendData['userdata']= this.serviceform.value;
+    this.sendData = {
+      title: servicedata.title,
+      description: servicedata.description,
+      charges: servicedata.charges,
+      userdata: this.serviceform.value
+    };
     
-      this.applyservice.applyservice(this.servicedata).subscribe((res)=>{
+      this.applyservice.applyservice(this.sendData).subscribe((res)=>{
 console.log(res,'sdfg')
       });
-      console.log('Form submitted successfully', this.servicedata);
+      console.log('Form submitted successfully', this.sendData);
+        this.serviceform.reset();
+this.router.navigate(['/gardening'])
     } else {
       console.log('Selected service does not match');
     }

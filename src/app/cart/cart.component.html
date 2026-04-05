@@ -1,7 +1,7 @@
 
 <!-- <div class="container">
      <div class="row">
-        <div class="col-lg-4 d-flex align-items-center justify-content-center" *ngFor="let item of cartitem" >
+        <div class="col-lg-4 d-flex align-items-center justify-content-center" *ngFor="let item of cartItems" >
             <div >
 
          
@@ -40,7 +40,7 @@
     </div>
     
     <!-- Empty cart state (show when there are no items) -->
-    <div class="empty-cart" *ngIf="cartitem && cartitem.length === 0">
+    <div class="empty-cart" *ngIf="cartItems && cartItems.length === 0">
       <i class="fa-solid fa-cart-shopping"></i>
       <h3>Your cart is empty</h3>
       <p>Looks like you haven't added any plants to your cart yet</p>
@@ -48,10 +48,10 @@
     </div>
     
     <!-- Cart with items -->
-    <div class="row" *ngIf="cartitem && cartitem.length > 0">
+    <div class="row" *ngIf="cartItems && cartItems.length > 0">
       <!-- Cart items -->
       <div class="col-lg-8">
-        <div class="cart-item" *ngFor="let item of cartitem">
+        <div class="cart-item" *ngFor="let item of cartItems">
           <img [src]="item.like" class="heart-img">
           
           <div class="item-content">
@@ -87,7 +87,7 @@
               </div> -->
               
               <div class="item-actions">
-                <button class="btn-remove" (click)="removecart(item.id)">
+                <button class="btn-remove" (click)="removecart(item._id)">
                   <i class="fa-solid fa-trash-can"></i> Remove
                 </button>
                
@@ -103,7 +103,7 @@
           <h3>Order Summary</h3>
 <!--           
           <div class="summary-item">
-            <span>Subtotal ({{cartitem.length}} items)</span>
+            <span>Subtotal ({{cartItems.length}} items)</span>
             <span>Rs.{{calculateSubtotal()}}</span>
           </div>
           

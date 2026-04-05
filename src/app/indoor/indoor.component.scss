@@ -37,11 +37,11 @@
     .give-height{
          height:auto
     }
-    .scroll{
-        overflow: hidden;
-        overflow-y: scroll;
-        height: 100vh;
+     .scroll{
+       overflow: visible;
+  height: auto;
     }
+  
     .outdoor-detail {
       position: relative;
       background-color: white;
@@ -96,7 +96,9 @@
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     height: 100%;
-    
+      position: fixed ;
+  top: 12rem; 
+   width:20rem;
     h3 {
       color: #2e7d32;
       font-family: 'Montserrat', sans-serif;
@@ -261,3 +263,9 @@
     border-radius: 0 0 10px 0;
     font-weight: 500;
   }
+
+   @media (max-width:1325px){
+    .filter-sidebar {
+   width:15rem;
+  }
+}

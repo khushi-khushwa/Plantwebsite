@@ -5,7 +5,7 @@ import { ServicesService } from '../cart/services.service';
 import { WishlistService } from '../services/wishlist.service';
 import { ApplyservicesService } from '../services/applyservices.service';
 import { ServiceService } from '../commentservice/service.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-searchdetail',
   templateUrl: './searchdetail.component.html',
@@ -15,16 +15,20 @@ export class SearchdetailComponent implements OnInit {
 
   constructor( private activeroute:ActivatedRoute, private alldata:ApplyservicesService, private route:Router,
     private cart: ServicesService,
+        private _snackbar:MatSnackBar, 
      private comment:ServiceService,
   private wishlist:WishlistService) { }
   cartitem:any
+  Item:any
   selectedValue: number = 0;
   listOfNames: string[] = [];
   whitehidden:boolean=true;
      commentForm :FormGroup;
      redhidden:boolean=false;
+      wishlistItems: any[] = [];
   displayItem:any
   itemId:any;
+  searchId:any
   printvalue:any;
   comments: { text: string; createdAt:string; name:string; userName:string   }[] = []; 
   newComment: string = '';
@@ -38,44 +42,52 @@ export class SearchdetailComponent implements OnInit {
     this.commentForm = new FormGroup({
       comment: new FormControl('')
     })
-    this.displayItem = this.alldata.filterdata().filter(value =>{
-      return value.id 
-})
-
-
 this.activeroute.paramMap.subscribe((param:ParamMap)=>{
-  this.itemId=param.get('id');
-  this.getproducts()
-})
+  this.itemId = param.get('id');
 
+  this.alldata.filterdata().subscribe((value:any[]) =>{
+    this.Item = value;
+    this.getproducts(); 
+  });
+});
 
 
   }
   getproducts(){
-    if(this.displayItem && this.itemId){
-      this.displayItem = this.displayItem.find(item => item.id == this.itemId);
+    if( this.itemId && this.Item){
+      this.displayItem = this.Item.find(item => item._id.toString() === this.itemId);
+      
+      console.log(this.displayItem);
        if(!this.displayItem){
         this.route.navigate(['/notfound']);
         console.log('product not found')
        }
        else{
         console.log('product is found');
+       
        }
+    }else{
+      this.checkWishlistStatus(this.displayItem._id)
     }
 
   }
   addToCart(id:number):void{
-    const selectedItem =this.displayItem.find((item:any)=> item.id === id);
+    const selectedItem =this.Item.find((item:any)=> item._id === id);
     if(selectedItem){
-      this.cart.addItem(selectedItem).subscribe({
-        next:()=>{
-          alert('item added',);
+      this.cart.addItem("post/product",selectedItem).subscribe({
+         next: () => {
+          this._snackbar.open(' Item ia added to cart ','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
           this.getitem();
         },
-       error: (error)=>{
+        error: (error) => {
           console.log(error);
-          alert('failed')
-        }
+          alert('failed');
+        },
     },
  )
     }
@@ -95,19 +107,35 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
   onsubmit(){
     this.printvalue=this.commentForm.get('comment')?.value;
   };
+
+  
+  getWishItem(): void {
+    this.wishlist.wishlistItem().subscribe({
+      next: (data) => {
+       
+        console.log('wishlist item', data);
+      },
+    });
+  }
   wishItem(productId):void{
     console.log(productId,'sdfgh')
     this.whitehidden=false;
     this.redhidden=true;
-    const whishProduct = this.displayItem.find((item:any) => item.id == productId)
+    const whishProduct = this.Item.find((item:any) => item._id == productId)
     if(whishProduct){
-      this.wishlist.addWishlistItem(whishProduct).subscribe({
-        next:()=>{
-        
+      this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
+       next: () => {
+          this._snackbar.open('Item is added to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
+          this.getWishItem();
         },
-        error : (error)=>{
-          console.log('not add in wishlist',error);
-        }
+        error: (error) => {
+          console.log('not add in wishlist', error);
+        },
        })
     }
   }
@@ -115,11 +143,23 @@ this.activeroute.paramMap.subscribe((param:ParamMap)=>{
  
 
   buyProduct(product:any){
-    this.route.navigate(['/buyitem',product.id])
+    this.route.navigate(['/buyitem',product._id])
   };
 
 
-    
+     checkWishlistStatus(id){
+  this.wishlist.wishlistItem().subscribe({
+  next: (data) =>{
+    console.log('wishlist item', data);
+    this.wishlistItems  = data
+
+      const isWishlisted  = data.some( item => item._id  == id )
+       this.redhidden = isWishlisted;
+      this.whitehidden = !isWishlisted;
+  }
+})
+}
+
     removeitem(id){
 this.whitehidden=true;
 this.redhidden=false;
@@ -129,10 +169,15 @@ console.log('sdfghjnk')
     
   //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
-        next: () => {
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
+         next: () => {
           console.log("Item deleted successfully:", id);
-          
+           this._snackbar.open('Item is deleted to wishlist','close',{
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+            panelClass: ['notif-success'],
+          }); 
         },
         error: (err) => {
           console.error("Error deleting item:", err);
@@ -144,7 +189,7 @@ console.log('sdfghjnk')
 
   countStar(star){
     this.selectedValue = star;
-    console.log(star);
+    // console.log(star);
   }
   
   

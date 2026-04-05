@@ -1,80 +1,67 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange } from '@angular/core';
-import { ActivatedRoute ,Router} from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApplyservicesService } from '../services/applyservices.service';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-searchitem',
   templateUrl: './searchitem.component.html',
   styleUrls: ['./searchitem.component.scss']
 })
-export class SearchitemComponent implements OnInit {
+export class SearchitemComponent implements OnInit, OnDestroy {
 
-  // @Input() inputitem: any[] = [];
-  matchvalue
- searchdata:any;
- showdata:any=[];
-  constructor(private route:ActivatedRoute,  private router : Router ,private alldata:ApplyservicesService ) { 
-    
-  }
-     
-  // ngOnChanges(changes): void {
-  //   if (changes['inputitem'] && changes['inputitem'].currentValue) {
-  //     console.log("Received Search Results:", this.inputitem);
-  //   }
-  // }
+  showdata: any[] = [];       // ✅ filtered results yahan store honge
+  loading: boolean = false;
+  searchTerm: string = '';
+  private sub: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private alldata: ApplyservicesService
+  ) {}
+
   ngOnInit(): void {
-
-console.log('filterdata')
-    this.route.queryParams.subscribe(params =>{
-      const search = params['data'] 
-      // this.searchdata = this.route.snapshot.queryParamMap.get('data')
-      console.log(search,'sd')
-      this.searchitem(search);
-    })
-
-
-
-    
+    this.route.queryParams.subscribe(params => {
+      const search = params['data'];
+      console.log('Search term:', search);
+      if (search) {
+        this.searchTerm = search;
+        this.searchitem(search);   
+      }
+    });
   }
 
-  
- searchitem(search){
-    
-  const searchstr = search.toLocaleLowerCase();
- 
-  const data = this.alldata.filterdata().filter(value => {
+  searchitem(search: string) {
+    this.loading = true;
+    const searchstr = search.toLocaleLowerCase();
 
-       const namematch = value.name?.toLocaleLowerCase().match(searchstr);
+    this.sub = this.alldata.filterdata().subscribe({
+      next: (value: any[]) => {
+        console.log('All data:', value);
 
-       
-       return namematch;
-       
-      })
-      
-      
-      console.log(data)
-      this.matchvalue=data
-      return data;
-    }
-    //  const type = value.type?.toLocaleLowerCase().includes(searchstr) || false;
-// this.searchResults.emit(data); 
-  
-// filterResults() {
-//     const allItems = this.alldata.filterdata();
-  
-//   allItems.filter(item =>{
-//       //  console.log(item.name)
-//    if(item.name == this.searchdata){
-//      this.showdata = item
-     
-//    }
-  
-//     })
-  
-//     console.log(this.showdata, 'Filtered Search Results');
-//   }
-onbuy(product){
-  console.log(product)
+        this.showdata = value.filter(item => {
+          const namematch = item.name?.toLocaleLowerCase().includes(searchstr);
 
-    this.router.navigate(['/search-detail', product.id])
-}
+          return namematch;
+        });
+
+        console.log('Filtered results:', this.showdata);
+        this.loading = false;
+      },
+      error: (err) => {
+        console.log('Error:', err);
+        this.loading = false;
+      }
+    });
+  }
+
+  onbuy(product: any) {
+    console.log(product);
+    this.router.navigate(['/search-detail', product._id]);
+  }
+
+  ngOnDestroy() {
+    this.sub?.unsubscribe(); 
+  }
 }

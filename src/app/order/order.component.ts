@@ -11,14 +11,26 @@ export class OrderComponent implements OnInit {
 
   order:any;
   ngOnInit(): void {
- this.orderData.orderShow().subscribe({
-     next: (value)=>{
-      this.order =value
+this.itemShow()
+  }
+
+  cancelOrder(id){
+this.orderData.cancelOrder(id).subscribe({
+  next:(value)=>{
+    console.log(value)
+    this.itemShow()
+  }
+})
+  }
+
+  itemShow(){
+     this.orderData.orderShow().subscribe({
+     next: (value:any)=>{
+      this.order =value.message
       console.log(this.order)
      }
     });
    
 
   }
-
 }

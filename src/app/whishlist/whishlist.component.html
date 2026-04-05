@@ -39,7 +39,7 @@
   
     
     <!-- Empty wishlist  -->
-    <div class="empty-wishlist" *ngIf="showWishItem && showWishItem.length === 0">
+    <div class="empty-wishlist" *ngIf="items && items.length === 0">
       <i class="fa-regular fa-heart"></i>
       <h3>Your wishlist is empty</h3>
       <p>Add items to your wishlist to save them for later</p>
@@ -47,12 +47,12 @@
     </div>
    
     <!-- Wishlist items -->
-    <div class="row row-gap-4" *ngIf="showWishItem && showWishItem.length > 0">
+    <div class="row row-gap-4" *ngIf="items && items.length > 0">
          <div class="section-title">
       <h2>My Wishlist</h2>
       <p>Items you've saved for later purchase</p>
     </div>
-      <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of showWishItem">
+      <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of items">
         <div class="shadow wishlist-align p-4">
           
           <img [src]="item.like" class="heart-img">
@@ -79,7 +79,7 @@
           
           <!-- Action buttons -->
           <div class="action-buttons">
-            <button class="btn btn-remove buy-btn" (click)="remove(item.id)">
+            <button class="btn btn-remove buy-btn" (click)="remove(item._id)">
               <i class="fa-solid fa-trash-can me-1 text-white"></i><span class="text-white">Remove</span> 
             </button>
             <button class="btn btn-buy buy-btn" routerLink="buy">

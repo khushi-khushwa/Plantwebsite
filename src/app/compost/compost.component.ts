@@ -17,18 +17,26 @@ export class CompostComponent implements OnInit {
  
 
   ngOnInit(): void {
-    this.allCompost = this.compost.filterdata().filter(value =>{
-      return value.catergory === 'compost'
-      }); 
+
+    // this.allCompost = this.compost.filterdata().filter(value =>{
+    //   return value.category === 'compost'
+    //   }); 
    
-  
-    
+     this.compost.filterdata().subscribe((data:any[]) =>{
+      this.allCompost = data.filter(value=>{
+          return value.category === "compost"
+      })
+      console.log(data)
+           
+     })
+   
   }
   toggleLike(product:any){
     this.getallCompost.toggleLike(product)
   }
   onbuy(products: any){
-    this.route.navigate(['/compost-detail', products.id])
+    console.log(products)
+    this.route.navigate(['/compost-detail', products._id])
 }
 
 

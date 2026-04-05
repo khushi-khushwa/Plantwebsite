@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { Router,NavigationEnd  } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { ApplyservicesService } from '../services/applyservices.service';
+import { Subscription } from 'rxjs';
 // import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
@@ -36,13 +37,19 @@ export class HeaderComponent implements OnInit {
     })
 
 
-    this.authServices.loginEmitter.subscribe((res:any)=>{
-      console.log(res,'fu');
-      if(res && res == true){
-        this.login = true;
-      }
-   
+    this.authServices.isLoggedIn$.subscribe((status:boolean)=>{
+ console.log(status);
+   this.login = status;
     })
+    // this.authServices.loginEmitter.subscribe((res:any)=>{
+    //   console.log(res,'fu');
+    //   if(res && res == true){
+    //     this.login = true;
+    //   }
+   
+    // })
+
+   
   
   }
 
@@ -59,7 +66,9 @@ export class HeaderComponent implements OnInit {
   
   logout() {
     this.authServices.logout();
-    this.login= false;
+    // this.login= false;
   }
-
+ngOnDestroy() {
+    // this.authSub?.unsubscribe(); // ✅ memory leak nahi hoga
+  }
 }

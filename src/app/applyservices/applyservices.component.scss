@@ -57,11 +57,13 @@
     font-weight: 600;
     font-size: 18px;
     color: #2d3748;
+    text-align: center;
   }
   
   .service-head{
     display: flex;
-    justify-content: space-between;
+    justify-content:end;
+       
     
   }
   .service-description {
@@ -77,8 +79,8 @@
   }
   
   .price-tag {
-    font-weight: 700;
-    font-size: 18px;
+    // font-weight: 700;
+    font-size: 16x;
     color: #2d3748;
     margin-bottom: 8px;
   }

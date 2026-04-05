@@ -51,23 +51,38 @@ export class CompostDetailComponent implements OnInit {
   this.listOfNames =this.comment.getListOfName()
 
 
-    this.displayItem = this.compost.filterdata().filter((value) => {
-      return value.catergory === 'compost';
-    });
-    console.log(this.displayItem);
 
+
+  this.compost.filterdata().subscribe((data: any[]) => {
+
+   
+    this.allCompost = data.filter(item => item.category === "compost");
+
+    console.log("Filtered Data:", this.allCompost);
+
+   
     this.activeroute.paramMap.subscribe((params: ParamMap) => {
-      this.applyId = params.get('id');
-      this.getproduct();
+
+      this.applyId = params.get("id");
+      console.log("ID:", this.applyId);
+      this.getproduct()
+      
+      // this.displayItem = this.allCompost.find(
+      //   item => item._id === this.applyId
+      // );
+      // if (!this.displayItem) {
+      //   // this.route.navigate(['/notfound']);
+      //   console.log("product not found ")
+      // }
+
     });
 
-    let date = new Date();
-    console.log(date);
-    this.date = date.getSeconds();
-  }
+  });
+
+}
 
   buyProduct(product: any) {
-    this.route.navigate(['/buyitem', product.id]);
+    this.route.navigate(['/buyitem', product._id]);
   }
  
 
@@ -83,10 +98,10 @@ export class CompostDetailComponent implements OnInit {
   }
 
   getproduct(): void {
-    if (this.displayItem && this.applyId) {
-      this.displayItem = this.compost
-        .filterdata()
-        .find((products: any) => products.id == this.applyId);
+    console.log(this.applyId)
+    if (this.applyId) {
+      console.log(this.allCompost)
+      this.displayItem = this.allCompost.find((products: any) => products._id == this.applyId);
 
       console.log(this.displayItem);
       if (!this.displayItem) {
@@ -96,7 +111,7 @@ export class CompostDetailComponent implements OnInit {
       }
     } else {
       console.log('product found');
-      this.checkWishlistStatus(this.displayItem.id)
+      this.checkWishlistStatus(this.displayItem._id)
 
     }
   }
@@ -104,11 +119,10 @@ export class CompostDetailComponent implements OnInit {
   // cart-----------------------------
 
   addToCart(id: number): void {
-    const selectedItem = this.compost
-      .filterdata()
-      .find((item: any) => item.id === id);
+    const selectedItem = this.allCompost
+      .find((item: any) => item._id === id);
     if (selectedItem) {
-      this.cart.addItem(selectedItem).subscribe({
+      this.cart.addItem("post/product",selectedItem).subscribe({
         next: () => {
           this._snackbar.open(' Item ia added to cart ','close',{
             duration: 3000,
@@ -155,7 +169,7 @@ export class CompostDetailComponent implements OnInit {
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -166,11 +180,10 @@ export class CompostDetailComponent implements OnInit {
     console.log(productId, 'sdfgh');
     this.whitehidden = false;
     this.redhidden = true;
-    const whishProduct = this.compost
-      .filterdata()
-      .find((item: any) => item.id == productId);
+    const whishProduct = this.allCompost
+      .find((item: any) => item._id === productId);
     if (whishProduct) {
-      this.wishlist.addWishlistItem(whishProduct).subscribe({
+      this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
         next: () => {
           this._snackbar.open('Item is added to wishlist','close',{
             duration: 3000,
@@ -194,16 +207,17 @@ export class CompostDetailComponent implements OnInit {
   }
 
 
-  removeitem(id){
+  removeitem(id:string){
+    console.log(id)
 this.whitehidden=true;
 this.redhidden=false;
 console.log('sdfghjnk')
 
     console.log(id);
     
- 
+//  this.wishlist = this.wishlist.filter(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           console.log("Item deleted successfully:", id);
            this._snackbar.open('Item is deleted to wishlist','close',{

@@ -36,7 +36,7 @@ export class PotsDetailComponent implements OnInit {
      wishlistItems: any[] = [];
    dataproduct:any[]=[]
    displayItem
- 
+ allPots:any=[]
    printvalue:any
     ngOnInit(): void {
   
@@ -45,8 +45,10 @@ export class PotsDetailComponent implements OnInit {
               comment: new FormControl('')
             })
             
-        this.displayItem = this.potItem.filterdata().filter(value =>{
-          return value.catergory === 'pots'
+       this.potItem.filterdata().subscribe((value:any[]) =>{
+           value.filter(data =>{
+            this.allPots=data.category === 'pots'
+           })
         })
         
     this.comments = this.comment.comments;
@@ -79,8 +81,8 @@ export class PotsDetailComponent implements OnInit {
 
       getproducts(){
     
-        if(this.displayItem && this.potId){
-          this.displayItem = this.potItem.filterdata().find(item => item.id == this.potId);
+        if(this.allPots &&this.potId){
+          this.displayItem = this.allPots.find(item => item._id == this.potId);
           if(!this.displayItem){
             this.route.navigate(['/notfound'])
             console.log('product not found')
@@ -93,9 +95,9 @@ export class PotsDetailComponent implements OnInit {
       }
     
       addToCart(id:number):void{
-        const selectedItem = this.potItem.filterdata().find((item:any)=> item.id === id);
+        const selectedItem = this.allPots.find((item:any)=> item._id === id);
         if(selectedItem){
-          this.cart.addItem(selectedItem).subscribe({
+          this.cart.addItem("post/product",selectedItem).subscribe({
             next:()=>{
               this._snackbar.open(' Item ia added to cart ','close',{
                 duration: 3000,
@@ -142,7 +144,7 @@ export class PotsDetailComponent implements OnInit {
     console.log('wishlist item', data);
     this.wishlistItems  = data
 
-      const isWishlisted  = data.some( item => item.id  == id )
+      const isWishlisted  = data.some( item => item._id  == id )
        this.redhidden = isWishlisted;
       this.whitehidden = !isWishlisted;
   }
@@ -150,15 +152,16 @@ export class PotsDetailComponent implements OnInit {
 }
 
 removeitem(id){
+  console.log(id)
 this.whitehidden=true;
 this.redhidden=false;
 console.log('sdfghjnk')
 
     console.log(id);
     
-  //  this.wishlist = this.wishlist.filter(item => item.id !== id); 
+  //  this.wishlist = this.wishlist.find(item => item.id !== id); 
     if (this.wishlist) {
-      this.wishlist.deleteWishlistItem(id).subscribe({
+      this.wishlist.deleteWishlistItem("delete/product",id).subscribe({
         next: () => {
           this._snackbar.open('Item is deleted to wishlist','close',{
             duration: 3000,
@@ -182,9 +185,9 @@ console.log('sdfghjnk')
     console.log(productId,'sdfgh')
     this.whitehidden=false;
     this.redhidden=true;
-    const whishProduct =this.potItem.filterdata().find((item:any) => item.id == productId)
+    const whishProduct =this.allPots.find((item:any) => item._id == productId)
     if(whishProduct){
-      this.wishlist.addWishlistItem(whishProduct).subscribe({
+      this.wishlist.addWishlistItem("post/product",whishProduct).subscribe({
         next:()=>{
           this._snackbar.open('Item is added to wishlist','close',{
             duration: 3000,

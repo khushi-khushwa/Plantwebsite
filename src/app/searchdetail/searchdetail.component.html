@@ -12,8 +12,8 @@
       <div class="col-lg-6 p-4">
         <div class="ps-lg-5 compost-detail">
           <!-- Wishlist Icons -->
-          <img [src]="displayItem.dislike" class="white-img" *ngIf="whitehidden" (click)="wishItem(displayItem.id)">
-          <img [src]="displayItem.like" class="heart-img" *ngIf="redhidden" (click)="removeitem(displayItem.id)">
+          <img [src]="displayItem.dislike" class="white-img" *ngIf="whitehidden" (click)="wishItem(displayItem._id)">
+          <img [src]="displayItem.like" class="heart-img" *ngIf="redhidden" (click)="removeitem(displayItem._id)">
           
           <!-- Product Information -->
           <h5 class="mt-3 mb-2">{{ displayItem.name }}</h5>
@@ -40,7 +40,7 @@
           <!-- Action Buttons -->
           <div class="d-flex align-items-center gap-3">
             <button class="btn buy-btn mt-3" (click)="buyProduct(displayItem)">Buy Now</button>
-            <button class="btn cart-btn mt-3" (click)="addToCart(displayItem.id)">Add to Cart</button>
+            <button class="btn cart-btn mt-3" (click)="addToCart(displayItem._id)">Add to Cart</button>
           </div>
           
           <!-- Shipping Information -->
