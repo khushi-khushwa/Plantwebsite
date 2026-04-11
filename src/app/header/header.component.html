@@ -38,10 +38,10 @@
       <div class="profile-dropdown" *ngIf="login">
         <div class="profile-trigger">
           <img src="../../assets/images/gardening/girl.jpg" alt="Profile" class="profile-image">
-          <span class="profile-arrow"><i class="fa-solid fa-angle-down"></i></span>
+          <span class="profile-arrow" (click)="dropdownOpen()"><i class="fa-solid fa-angle-down"></i></span>
         </div>
         
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" [class.show]="dropdownOpenFlag">
           <a routerLink="profile" class="dropdown-item">
             <i class="fa-solid fa-user"></i> Profile
           </a>

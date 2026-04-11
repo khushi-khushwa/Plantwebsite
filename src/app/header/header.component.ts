@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   // @Output() searchResults = new EventEmitter<any[]>();
 
-
+dropdownOpenFlag=false
   matchvalue:any;
   alltdata
   faheart = faHeart;
@@ -27,6 +27,12 @@ export class HeaderComponent implements OnInit {
 
   filterdata : FormGroup 
 
+  @HostListener('document:click', ['$event'])
+clickOutside(event: any) {
+  if (!event.target.closest('.profile-dropdown')) {
+    this.dropdownOpenFlag = false;
+  }
+}
   ngOnInit() {
 
 
@@ -70,5 +76,11 @@ export class HeaderComponent implements OnInit {
   }
 ngOnDestroy() {
     // this.authSub?.unsubscribe(); // ✅ memory leak nahi hoga
+  }
+
+
+  dropdownOpen(){
+     console.log('adf')
+this.dropdownOpenFlag = !this.dropdownOpenFlag;
   }
 }
