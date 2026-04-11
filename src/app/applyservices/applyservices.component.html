@@ -1,39 +1,42 @@
-
-<!-- service-list.component.html -->
-<div class="container-fluid service-container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h3 class="section-title"> Services</h3>
-        <p class="section-description">Service that you have applied</p>
-      </div>
-    </div>
-  
-    <div class="row">
-      <div class="col-12">
-        <!-- Card-based service list -->
-        <div class="service-card" *ngFor="let data of order; let i = index">
-          <div class="service-info">
-            <div class="service-number">{{i + 1}}</div>
-            <div class="service-details">
-                <!-- <div class="service-head"> -->
-
-                  
-                
-                      <h4 class="service-title">{{data.title}}</h4>
-                      <div class="service-head">
-                            <span class="price-tag mx-2">{{data.charges}}</span><span (click)="cancel(data._id)"><i class="fa-solid fa-trash"></i></span>
-                      </div>
-                <!-- </div> -->
-              <p class="service-description" *ngIf="data.description">{{data.description}}</p>
-            </div>
-      
-        
-          </div>
-          <!-- <div class="service-price">
-            <span class="price-tag">{{data.charges}}</span>
-           
-          </div> -->
-        </div>
-      </div>
-    </div>
+<div class="container py-4">
+  <div class="text-center mb-5">
+    <h3 class="fw-bold">🌿 Your Services</h3>
+    <p class="text-muted">Track your applied services</p>
   </div>
+
+  <div class="timeline">
+
+    <div *ngFor="let data of order; let i = index" class="timeline-item">
+
+      <!-- DOT -->
+      <div class="timeline-dot"></div>
+
+      <!-- CARD -->
+      <div class="timeline-card">
+
+        <div class="card-header">
+          <h5>{{data.title}}</h5>
+          <span class="price">₹{{data.charges}}</span>
+        </div>
+
+        <p class="desc" *ngIf="data.description">
+          {{data.description}}
+        </p>
+
+        <div class="card-footer">
+          <span class="index">#{{i + 1}}</span>
+
+          <div class="actions">
+            <!-- <button class="view-btn">View</button> -->
+            <button (click)="cancel(data._id)" class="delete-btn">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

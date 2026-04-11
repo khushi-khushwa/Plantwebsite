@@ -14,6 +14,15 @@ export class OrderComponent implements OnInit {
 this.itemShow()
   }
 
+  getStatusClass(status: string): string {
+  const map: Record<string, string> = {
+    'Processing': 'badge-processing',
+    'Shipped':    'badge-shipped',
+    'Delivered':  'badge-delivered',
+    'Cancelled':  'badge-cancelled',
+  };
+  return map[status] || 'badge-processing';
+}
   cancelOrder(id){
 this.orderData.cancelOrder(id).subscribe({
   next:(value)=>{

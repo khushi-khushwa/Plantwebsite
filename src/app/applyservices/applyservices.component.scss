@@ -1,121 +1,106 @@
+/* Timeline Line */
+.timeline {
+  position: relative;
+  margin-left: 20px;
+}
 
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #2e7d32;
+}
 
-/* service-list*/
-.service-container {
-    padding: 2rem 0;
-    max-width:100rem;
-  }
-  
-  .section-title {
-    margin-bottom: 0.5rem;
-    position: relative;
-    font-weight: 600;
-    color: #2d3748;
-  }
-  
-  .section-description {
-    color: #718096;
-    margin-bottom: 1.5rem;
-  }
-  
-  .service-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 1.25rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    margin-bottom: 1rem;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: border-color 0.1s ease ;
-  }
-  
-  .service-card:hover {
-       border-bottom: 4px solid #0ca11d;
-  }
-  
-  .service-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .service-number {
-    color: #0c881f;
-    font-size: 2rem;
-    margin-right: 15px;
-  }
-  
-  .service-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .service-title {
-    margin: 0;
-    font-weight: 600;
-    font-size: 18px;
-    color: #2d3748;
-    text-align: center;
-  }
-  
-  .service-head{
-    display: flex;
-    justify-content:end;
-       
-    
-  }
-  .service-description {
-    margin: 5px 0 0;
-    color: #718096;
-    font-size: 14px;
-  }
-  
-  .service-price {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .price-tag {
-    // font-weight: 700;
-    font-size: 16x;
-    color: #2d3748;
-    margin-bottom: 8px;
-  }
-  
-  .btn-select {
-    background-color: #0b8419;
-    color: white;
-    border: none;
-    padding: 6px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: all 0.2s;
-  }
-  
-  .btn-select:hover {
-    background-color: #0f8b11;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .service-card {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .service-price {
-      margin-top: 15px;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-      align-items: center;
-    }
-    
-    .price-tag {
-      margin-bottom: 0;
-    }
-  }
+/* Each Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 40px;
+}
+
+/* Dot */
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: #2e7d32;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(46,125,50,0.5);
+}
+
+/* Card */
+.timeline-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.timeline-card:hover {
+  transform: translateX(5px);
+}
+
+/* Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.price {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Description */
+.desc {
+  font-size: 13px;
+  color: #666;
+  margin: 8px 0;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.index {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-btn {
+  background: transparent;
+  border: 1px solid #2e7d32;
+  color: #2e7d32;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.delete-btn {
+  background: #e53935;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
