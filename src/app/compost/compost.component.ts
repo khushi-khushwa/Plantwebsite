@@ -18,9 +18,7 @@ export class CompostComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.allCompost = this.compost.filterdata().filter(value =>{
-    //   return value.category === 'compost'
-    //   }); 
+  
    
      this.compost.filterdata().subscribe((data:any[]) =>{
       this.allCompost = data.filter(value=>{

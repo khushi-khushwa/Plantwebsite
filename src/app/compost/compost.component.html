@@ -11,14 +11,16 @@
           <div class="filter-sidebar">
             <h3>Categories</h3>
             <ul>
-              <li><a >Flowering Plants</a></li>
-              <li><a >Outdoor</a></li>
-              <li><a >Seasonal Plants </a></li>
-              <li><a >Indoor Plants</a></li>
-              <li><a >Seeds</a></li>
+
+              <li routerLink="/outdoor">Outdoor</li>
+              <li routerLink="/seasonal">Seasonal Plants </li>
+              <li routerLink="/indoor">Indoor Plants</li>
+              <li routerLink="/seeds">Seeds</li>
+                  <li routerLink="/tools">Tools</li>
+        
             </ul>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda mollitia voluptatem dicta adipisci sunt animi aspernatur accusantium neque! Tempora molestias placeat alias deserunt aut nam mollitia non similique quasi illo.</p>
+            <p>Compost is used to improve soil quality and help plants grow better. Users can explore various compost options and choose according to their needs.</p>
           </div>
         </div>
         
@@ -26,11 +28,11 @@
           <div class="row row-gap-4">
             <div class=" col-6 col-md-4 col-sm-6 col-lg-3  " *ngFor="let products of allCompost">
               <div class="p-4 outdoor-detail" (click)="onbuy(products)">
-            
+                
                 <span class="badge-new" *ngIf="products.isNew">New</span>
                 <span class="badge-special" *ngIf="products.isSpecial">Sale</span>
                 
-              
+                
                 <div class="d-flex justify-content-center">
                   <img [src]="products.image" class="image-size">
                 </div>
@@ -62,3 +64,4 @@
       </div>
     </div>
   </div>
+          <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda mollitia voluptatem dicta adipisci sunt animi aspernatur accusantium neque! Tempora molestias placeat alias deserunt aut nam mollitia non similique quasi illo.</p> -->

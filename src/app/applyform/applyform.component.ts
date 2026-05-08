@@ -77,17 +77,7 @@ export class ApplyformComponent implements OnInit {
     // this.apply();
   }
 
-  // apply() {
-  //   const chooseservice = this.dataofapply.data;
-
-  //   if (chooseservice && chooseservice.length > 0) {
-  //     chooseservice.map((ele) => {
-  //       console.log(ele.title);
-  //       this.servicedata = ele;
-  //       // this.titlevalue = ele.title;
-  //     });
-  //   }
-  // }
+ 
 
   submit() {
     const optionvalue = this.serviceform.get('selectservice')?.value;
@@ -98,12 +88,7 @@ const selectedService = optionvalue.toLowerCase();
      console.log(servicedata)
     if (servicedata) {
     
-  //       this.sendData['title']=servicedata.title
-  //       this.sendData['description']=servicedata.description
-  //       this.sendData['charges']=servicedata.charges
-        
-  // console.log(this.sendData)
-  //     this.sendData['userdata']= this.serviceform.value;
+
     this.sendData = {
       title: servicedata.title,
       description: servicedata.description,

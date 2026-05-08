@@ -11,6 +11,21 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean{
 
       
+    
+    if(this.authservice.checkAuthentication()){
+      console.log('dsfgh')
+      return true;
+    }else{
+      this.route.navigate(['/login']);
+      return false;
+    }
+}
+  }
+
+  
+  
+  
+
   // if(this.authservice.isLoggedIn()){
    
   //   return true;
@@ -20,17 +35,3 @@ export class AuthGuard implements CanActivate {
   // }
     
   // }
-
-  if(this.authservice.checkAuthentication()){
-    console.log('dsfgh')
-    return true;
-  }else{
-    this.route.navigate(['/login']);
-    return false;
-  }
-}
-  }
-
-
-  
-
